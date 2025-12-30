@@ -3,13 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Portfolio from "./pages/portfolio";
 import reportWebVitals from "./reportWebVitals";
+import { AppProvider } from "./utils/context/AppContext";
+import { response } from "./pages/api/response";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Portfolio />
+    <AppProvider data={response}>
+      <Portfolio />
+    </AppProvider>
   </React.StrictMode>
 );
 
