@@ -8,9 +8,9 @@ const RootLayout = () => {
       <header>
         <Header />
       </header>
-      <body>
+      <main>
         <Outlet />
-      </body>
+      </main>
       <footer>
         <Footer />
       </footer>

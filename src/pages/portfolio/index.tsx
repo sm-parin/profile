@@ -14,6 +14,8 @@ export const Portfolio = () => {
   ];
   const router = createBrowserRouter(siteMap);
 
+  console.log("SiteMap:", siteMap);
+
   return <RouterProvider router={router} />;
 };
 
