@@ -1,0 +1,18 @@
+// Reusable mixins for the project
+
+// Centers content using flexbox.
+// Usage: @include center(); // centers both axes
+//        @include center(x); // centers horizontally
+//        @include center(y); // centers vertically
+@mixin center($axis: both) {
+	display: flex;
+	@if $axis == both {
+		justify-content: center;
+		align-items: center;
+	} @else if $axis == x {
+		justify-content: center;
+	} @else if $axis == y {
+		align-items: center;
+	}
+}
+
