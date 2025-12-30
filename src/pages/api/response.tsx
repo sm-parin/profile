@@ -1,8 +1,8 @@
-import { about } from "./routes/about";
-import { contact } from "./routes/contact";
-import { home } from "./routes/home";
-import { projects } from "./routes/projects";
-import { work } from "./routes/work/work";
+import { about } from "./routes/About";
+import { contact } from "./routes/Contact";
+import { home } from "./routes/Home";
+import { projects } from "./routes/Projects";
+import { work } from "./routes/work/Work";
 
 export const response = {
   home,
