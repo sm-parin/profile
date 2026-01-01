@@ -4,16 +4,13 @@ import "./index.css";
 import Portfolio from "./pages/portfolio";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./utils/context/AppContext";
-import { response } from "./pages/api/response";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <AppProvider data={response}>
-      <Portfolio />
-    </AppProvider>
+    <Portfolio />
   </React.StrictMode>
 );
 

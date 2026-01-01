@@ -3,19 +3,18 @@ import { IHomeProps } from "./home.model";
 import HomeHero from "./hero";
 import HomeProjects from "./projects";
 import HomeExperience from "./experience";
-import HomeAbout from "./about";
-import HomeContact from "./contact";
+import { useAppContext } from "../../utils/context/AppContext";
 
 const Home = ({ title = "Home" }: IHomeProps) => {
+  const { data } = useAppContext();
+
+  if (!data) return null;
+
   return (
     <div>
-      <HomeHero />
+      <HomeHero data={data.hero} />
       <HomeProjects />
       <HomeExperience />
-      <div>
-        <HomeAbout />
-        <HomeContact />
-      </div>
     </div>
   );
 };

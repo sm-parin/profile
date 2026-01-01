@@ -1,18 +1,30 @@
-import React from "react";
+// ...existing code...
+import { TypeAnimation } from "react-type-animation";
 import Button from "../../../components/library/button";
 import Typography from "../../../components/library/typography";
+import styles from "./hero.module.scss";
+import { createTypeSequence } from "../../../utils/functions/helper";
+import { IHomeHeroProps } from "./hero.model";
 
-const HomeHero = () => {
+const HomeHero = ({ data }: IHomeHeroProps) => {
+  if (!data) return null;
   return (
-    <div className="">
-      <Typography variant="h1">Parin. Products. Pixels. Programs.</Typography>
-      <Typography variant="h4">My Content</Typography>
+    <div className={styles["hero-container"]}>
+      <TypeAnimation
+        sequence={createTypeSequence(data.title || ([] as string[]))}
+        wrapper="span"
+        speed={50}
+        style={{ fontSize: "2em", display: "inline-block" }}
+        repeat={Infinity}
+      />
+      <Typography variant="h4">{data.description}</Typography>
       <div>
-        <Button label="About" />
-        <Button label="Resume" />
+        <Button label={data.primaryCta} />
+        <Button label={data.secondaryCta} />
       </div>
     </div>
   );
 };
 
 export default HomeHero;
+// ...existing code...
