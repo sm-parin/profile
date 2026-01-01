@@ -17,7 +17,7 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
         style={{ fontSize: "2em", display: "inline-block" }}
         repeat={Infinity}
       />
-      <Typography variant="h4">{data.description}</Typography>
+      <Typography variant="h4">{data.content}</Typography>
       <div>
         <Button label={data.primaryCta} />
         <Button label={data.secondaryCta} />
@@ -27,4 +27,3 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
 };
 
 export default HomeHero;
-// ...existing code...

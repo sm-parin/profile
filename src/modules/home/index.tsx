@@ -1,9 +1,9 @@
 import React from "react";
 import { IHomeProps } from "./home.model";
 import HomeHero from "./hero";
-import HomeProjects from "./projects";
 import HomeExperience from "./experience";
 import { useAppContext } from "../../utils/context/AppContext";
+import HomeConcepts from "./concepts";
 
 const Home = ({ title = "Home" }: IHomeProps) => {
   const { data } = useAppContext();
@@ -13,8 +13,8 @@ const Home = ({ title = "Home" }: IHomeProps) => {
   return (
     <div>
       <HomeHero data={data.hero} />
-      <HomeProjects />
-      <HomeExperience />
+      <HomeConcepts data={data.concepts} />
+      <HomeExperience data={data.experience} />
     </div>
   );
 };
