@@ -6,7 +6,7 @@ import Work from "../../modules/work";
 import Projects from "../../modules/projects";
 import About from "../../modules/about";
 import ContactMe from "../../modules/contact";
-import WorkDetailPage from "../../modules/work/detail-page";
+import WorkDetailPage from "../../modules/work/detail";
 import { AppProvider } from "../../utils/context/AppContext";
 import { response } from "../../data/response";
 
@@ -25,7 +25,7 @@ export const Portfolio = () => {
         { path: "home", element: <Home /> },
         { path: "work", element: <Work /> },
         { path: "work/:workId", element: <WorkDetailPage /> },
-        { path: "projects", element: <Projects /> },
+        // { path: "projects", element: <Projects /> },
         { path: "about", element: <About /> },
         { path: "contact", element: <ContactMe /> },
       ],
