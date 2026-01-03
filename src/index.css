@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  /* --color-primary: #2563eb;
+  --color-accent: #f97316;
+
+  --radius-md: 0.5rem;
+
+  --motion-fast: 150ms; */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -16,6 +25,3 @@ code {
     monospace;
 }
 
-.border {
-  border: 1px solid black;
-}

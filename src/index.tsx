@@ -4,6 +4,7 @@ import "./index.css";
 import Portfolio from "./pages/portfolio";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./utils/context/AppContext";
+import "./styles/global.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

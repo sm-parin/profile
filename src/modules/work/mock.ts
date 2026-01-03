@@ -5,6 +5,7 @@ export const details = {
   location: "Hyderabad, India",
   experience: "Professional",
   type: "Hybrid",
+  description: "DESCRIPTION",
   content: [
     {
       role: "Product Management Intern",
@@ -67,12 +68,12 @@ export const details = {
 
 export const mock = {
   deloitte: { ...details },
-  itlh: { ...details },
-  utec: { ...details },
-  fbDevC: { ...details },
-  defy: { ...details },
-  mentza: { ...details },
-  makermela: { ...details },
-  riidlAcademy: { ...details },
-  goDutch: { ...details },
+  itlh: { ...details, priority: 2 },
+  utec: { ...details, priority: 3 },
+  "fb-devc": { ...details, priority: 4 },
+  defy: { ...details, priority: 5 },
+  mentza: { ...details, priority: 6 },
+  makermela: { ...details, priority: 7 },
+  "riidl-academy": { ...details, priority: 8 },
+  "go-dutch": { ...details, priority: 9 },
 };

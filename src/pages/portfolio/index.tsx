@@ -27,7 +27,7 @@ export const Portfolio = () => {
         { path: "work/:workId", element: <WorkDetailPage /> },
         // { path: "projects", element: <Projects /> },
         { path: "about", element: <About /> },
-        { path: "contact", element: <ContactMe /> },
+        // { path: "contact", element: <ContactMe /> },
       ],
     },
   ];

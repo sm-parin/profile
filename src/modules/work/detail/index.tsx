@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "../../../components/library/typography";
-import SkillStack from "./role/skill-stack";
 import { details } from "../mock";
 import WorkRole from "./role";
 

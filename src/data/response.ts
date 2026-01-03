@@ -11,7 +11,7 @@ export const response = {
   about: {
     id: "about",
   },
-  contact: {
-    id: "contact",
-  },
+  // contact: {
+  //   id: "contact",
+  // },
 };

@@ -20,3 +20,21 @@ export const createTypeSequence = (
   }
   return seq;
 };
+
+export const shuffleCompanies = (data: Record<string, any>) => {
+  const entries = Object.entries(data);
+
+  // Fisher-Yates shuffle
+  for (let i = entries.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [entries[i], entries[j]] = [entries[j], entries[i]];
+  }
+
+  // Reconstruct object with shuffled order
+  const shuffled: Record<string, any> = {};
+  for (const [key, value] of entries) {
+    shuffled[key] = value;
+  }
+
+  return shuffled;
+};
