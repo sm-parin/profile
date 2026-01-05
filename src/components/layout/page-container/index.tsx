@@ -1,5 +1,4 @@
 import { IPageContainerProps } from "./page-container.model";
-import styles from "./page-container.module.scss";
 
 const PageContainer = ({
   bgColor,
@@ -8,7 +7,14 @@ const PageContainer = ({
 }: IPageContainerProps) => {
   return (
     <div className={`${bgColor}`}>
-      <div className={`${styles["page-container"]} ${className}`}>
+      <div
+        className={`
+            grid grid-cols-12 gap-x-4 mx-4
+            tablet:gap-x-6 tablet:mx-6
+            desktop:gap-x-8 desktop:mx-10
+            ${className}
+        `}
+      >
         {children}
       </div>
     </div>

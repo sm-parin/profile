@@ -7,6 +7,7 @@ import { createTypeSequence } from "../../../utils/functions/helper";
 import { IHomeHeroProps } from "./hero.model";
 import { useMemo } from "react";
 import PageContainer from "../../../components/layout/page-container";
+import Marquee from "react-fast-marquee";
 
 const HomeHero = ({ data }: IHomeHeroProps) => {
   const sequence = useMemo(
@@ -14,22 +15,38 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
     [data?.title]
   );
 
+  const skills = ["React", "TypeScript", "CSS", "JavaScript", "Node.js"];
+
   if (!data) return null;
-  
+
   return (
-    <PageContainer bgColor="bg-700" className={styles["hero-container"]}>
-      <TypeAnimation
-        sequence={sequence}
-        wrapper="h1"
-        speed={50}
-        // style={{ fontSize: "2em", display: "inline-block" }}
-        repeat={Infinity}
-        className="h1"
-      />
-      <Typography variant="h4">{data.content}</Typography>
-      <div>
-        <Button label={data.primaryCta} />
-        <Button label={data.secondaryCta} />
+    <PageContainer bgColor="bg-700" className="gap-y-4">
+      <div className="col-span-9">
+        <TypeAnimation
+          sequence={sequence}
+          wrapper="h1"
+          speed={50}
+          // style={{ fontSize: "2em", display: "inline-block" }}
+          repeat={Infinity}
+          className="h1"
+        />
+        <Typography variant="h4">{data.content}</Typography>
+      </div>
+      <div className="col-span-4 grid grid-cols-12">
+        <Button className="col-span-6" label={data.primaryCta} />
+        <Button className="col-span-6" label={data.secondaryCta} />
+      </div>
+      <div className="col-span-12">
+        <Marquee
+          autoFill
+          gradient
+          gradientColor="var(--color-700)"
+          gradientWidth={100}
+        >
+          {skills.map((skill) => (
+            <div className="pl-8">{skill}</div>
+          ))}
+        </Marquee>
       </div>
     </PageContainer>
   );
