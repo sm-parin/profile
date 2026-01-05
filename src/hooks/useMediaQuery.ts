@@ -1,19 +1,34 @@
-import React from "react";
 import { useMediaQuery as useRRMediaQuery } from "react-responsive";
+
+type ResponsiveSwitch<T> = (mobile: T, tablet: T, desktop: T) => T;
 
 const useMediaQuery = () => {
   const isTablet = useRRMediaQuery({
-    query: "(min-width: var(--breakpoint-tablet))",
+    minWidth: "768px",
   });
 
   const isDesktop = useRRMediaQuery({
-    query: "(min-width: var(--breakpoint-desktop))",
+    minWidth: "1280px",
   });
 
-  const isMobileOnly = !isTablet && !isDesktop;
+  const isMobileOnly = !isTablet;
   const isTabletOnly = isTablet && !isDesktop;
 
-  return { isMobileOnly, isTabletOnly, isTablet, isDesktop };
+  const responsiveSwitch: ResponsiveSwitch<any> = (mobile, tablet, desktop) => {
+    if (isDesktop) return desktop;
+    if (isTabletOnly) return tablet;
+    return mobile;
+  };
+
+  console.log("Device:", isMobileOnly, isDesktop, isTablet, isTabletOnly);
+
+  return {
+    responsiveSwitch,
+    isMobileOnly,
+    isTabletOnly,
+    isTablet,
+    isDesktop,
+  };
 };
 
 export default useMediaQuery;

@@ -8,6 +8,8 @@ import { IHomeHeroProps } from "./hero.model";
 import { useMemo } from "react";
 import PageContainer from "../../../components/layout/page-container";
 import Marquee from "react-fast-marquee";
+import useMediaQuery from "../../../hooks/useMediaQuery";
+import { response } from "../../../data/response";
 
 const HomeHero = ({ data }: IHomeHeroProps) => {
   const sequence = useMemo(
@@ -16,6 +18,9 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
   );
 
   const skills = ["React", "TypeScript", "CSS", "JavaScript", "Node.js"];
+
+  const { responsiveSwitch } = useMediaQuery();
+  const temp = responsiveSwitch(10, 20, 30);
 
   if (!data) return null;
 
