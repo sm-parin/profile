@@ -6,6 +6,7 @@ import styles from "./hero.module.scss";
 import { createTypeSequence } from "../../../utils/functions/helper";
 import { IHomeHeroProps } from "./hero.model";
 import { useMemo } from "react";
+import PageContainer from "../../../components/layout/page-container";
 
 const HomeHero = ({ data }: IHomeHeroProps) => {
   const sequence = useMemo(
@@ -16,20 +17,21 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
   if (!data) return null;
   
   return (
-    <div className={styles["hero-container"]}>
+    <PageContainer bgColor="bg-700" className={styles["hero-container"]}>
       <TypeAnimation
         sequence={sequence}
-        wrapper="span"
+        wrapper="h1"
         speed={50}
-        style={{ fontSize: "2em", display: "inline-block" }}
+        // style={{ fontSize: "2em", display: "inline-block" }}
         repeat={Infinity}
+        className="h1"
       />
       <Typography variant="h4">{data.content}</Typography>
       <div>
         <Button label={data.primaryCta} />
         <Button label={data.secondaryCta} />
       </div>
-    </div>
+    </PageContainer>
   );
 };
 

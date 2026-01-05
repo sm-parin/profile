@@ -1,8 +1,12 @@
-@mixin mobile {
-  @media (max-width: 599px) { @content; }
-}
-
+/* styles/mixins.scss */
 @mixin tablet {
-  @media (min-width: 600px) { @content; }
+  @media (min-width: 48rem) {
+    @content;
+  }
 }
 
+@mixin desktop {
+  @media (min-width: 80rem) {
+    @content;
+  }
+}
