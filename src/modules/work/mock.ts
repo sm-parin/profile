@@ -68,12 +68,12 @@ export const details = {
 
 export const mock = {
   deloitte: { ...details },
-  itlh: { ...details, priority: 2 },
-  utec: { ...details, priority: 3 },
-  "fb-devc": { ...details, priority: 4 },
-  defy: { ...details, priority: 5 },
-  mentza: { ...details, priority: 6 },
-  makermela: { ...details, priority: 7 },
-  "riidl-academy": { ...details, priority: 8 },
-  "go-dutch": { ...details, priority: 9 },
+  itlh: { ...details, priority: 2, experience: "Internship" },
+  utec: { ...details, priority: 3, experience: "Professional" },
+  "fb-devc": { ...details, priority: 4, experience: "Volunteer" },
+  defy: { ...details, priority: 5, experience: "Internship" },
+  mentza: { ...details, priority: 6, experience: "Internship" },
+  makermela: { ...details, priority: 7, experience: "Volunteer" },
+  "riidl-academy": { ...details, priority: 8, experience: "Internship" },
+  "go-dutch": { ...details, priority: 9, experience: "Internship" },
 };

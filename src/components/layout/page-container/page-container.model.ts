@@ -1,5 +1,5 @@
 export interface IPageContainerProps {
-  bgColor: string;
-  className: string;
+  bgColor?: string;
+  className?: string;
   children: React.ReactNode;
 }

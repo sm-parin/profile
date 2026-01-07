@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from "react";
 import Typography from "../../../components/library/typography";
 import { useNavigate } from "react-router-dom";
+import { applyTheme } from "../../../utils/functions/theme";
 
-const WorkCard = ({ data, isActive, index, route }: any) => {
+const WorkCard = ({ data, isActive, index, route, theme }: any) => {
   const [isCardHovered, setIsCardHovered] = useState(false);
   const navigate = useNavigate();
 
@@ -28,19 +29,23 @@ const WorkCard = ({ data, isActive, index, route }: any) => {
 
   const cardNumber = isActive ? positionMap[index + 1] : "";
 
+  const { bg, text } = applyTheme(theme);
+
   return (
     <div
-      className={`${cardClass} ${cardNumber} border p-4 ${
+      className={`${cardClass} ${cardNumber} border ${bg} p-4 ${
         isCardHovered ? "cursor-pointer" : ""
       }`}
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
       onClick={() => navigate(`/work/${route}`)}
     >
-      <Typography variant="h3">{data.company}</Typography>
-      <Typography variant="h3">{data.priority}</Typography>
-      <Typography variant="p">{data.duration}</Typography>
-      <Typography variant="p">{data.description}</Typography>
+      <div className={text}>
+        <Typography variant="h6">{data.company}</Typography>
+        <Typography variant="h3">{data.priority}</Typography>
+        <Typography variant="p3">{data.duration}</Typography>
+        <Typography variant="p3">{data.description}</Typography>
+      </div>
     </div>
   );
 };

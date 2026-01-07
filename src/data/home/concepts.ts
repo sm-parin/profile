@@ -6,22 +6,22 @@ export const concepts = {
   content: [
     {
       title: "Products",
-      proficiency: 7,
+      proficiency: 70,
       description: LOREM_IPSUM,
     },
     {
       title: "Programs",
-      proficiency: 5,
+      proficiency: 50,
       description: LOREM_IPSUM,
     },
     {
       title: "Pixels",
-      proficiency: 3,
+      proficiency: 30,
       description: LOREM_IPSUM,
     },
     {
       title: "People",
-      proficiency: 7,
+      proficiency: 70,
       description: LOREM_IPSUM,
     },
   ],

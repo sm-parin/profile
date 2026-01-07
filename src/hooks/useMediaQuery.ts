@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useMediaQuery as useRRMediaQuery } from "react-responsive";
 
 type ResponsiveSwitch<T> = (mobile: T, tablet: T, desktop: T) => T;
@@ -20,9 +21,16 @@ const useMediaQuery = () => {
     return mobile;
   };
 
+  const getDevice = () => {
+    if (isMobileOnly) return "mobile";
+    if (isTabletOnly) return "tablet";
+    if (isDesktop) return "desktop";
+  };
+
   console.log("Device:", isMobileOnly, isDesktop, isTablet, isTabletOnly);
 
   return {
+    getDevice,
     responsiveSwitch,
     isMobileOnly,
     isTabletOnly,

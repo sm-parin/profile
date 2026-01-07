@@ -1,17 +1,19 @@
+import { applyTheme } from "../../../utils/functions/theme";
 import { IPageContainerProps } from "./page-container.model";
 
 const PageContainer = ({
-  bgColor,
-  className,
+  bgColor = applyTheme().bg,
+  className = "",
   children,
 }: IPageContainerProps) => {
   return (
     <div className={`${bgColor}`}>
       <div
         className={`
-            grid grid-cols-12 gap-x-4 mx-4
-            tablet:gap-x-6 tablet:mx-6
-            desktop:gap-x-8 desktop:mx-10
+            mx-4
+            tablet:mx-6
+            max-w-300
+            desktop:mx-auto
             ${className}
         `}
       >
