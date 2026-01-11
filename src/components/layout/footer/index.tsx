@@ -4,8 +4,7 @@ import Typography from "../../library/typography";
 import { applyTheme } from "../../../utils/functions/theme";
 
 const Footer = () => {
-  const theme = "dark";
-  const { bg, text } = applyTheme(theme);
+  const { bg, text } = applyTheme();
   return (
     <PageContainer bgColor={bg} className="h-12">
       <Typography variant="p3" className={text}>

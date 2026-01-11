@@ -12,8 +12,9 @@ const PageContainer = ({
         className={`
             mx-4
             tablet:mx-6
-            max-w-300
-            desktop:mx-auto
+            desktop:mx-10
+            max-w-400
+            content:mx-auto
             ${className}
         `}
       >
