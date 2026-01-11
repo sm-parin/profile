@@ -22,16 +22,17 @@ export const Portfolio = () => {
       path: "/",
       element: <AppLayout />,
       children: [
-        { path: "home", element: <Home /> },
+        { index: true, element: <Home /> },
         { path: "work", element: <Work /> },
         { path: "work/:workId", element: <WorkDetailPage /> },
-        // { path: "projects", element: <Projects /> },
         { path: "about", element: <About /> },
-        // { path: "contact", element: <ContactMe /> },
       ],
     },
   ];
-  const router = createBrowserRouter(siteMap);
+
+  const router = createBrowserRouter(siteMap, {
+    basename: "/profile",
+  });
 
   return <RouterProvider router={router} />;
 };
