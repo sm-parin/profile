@@ -1,0 +1,12 @@
+/* styles/mixins.scss */
+@mixin tablet {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 80rem) {
+    @content;
+  }
+}

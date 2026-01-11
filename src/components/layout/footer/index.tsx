@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import PageContainer from "../page-container";
+import Typography from "../../library/typography";
+import { applyTheme } from "../../../utils/functions/theme";
 
 const Footer = () => {
+  const { bg, text } = applyTheme();
   return (
-    <div>Footer</div>
-  )
-}
+    <PageContainer bgColor={bg} className="h-12">
+      <Typography variant="p3" className={text}>
+        Footer
+      </Typography>
+    </PageContainer>
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,17 +1,255 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source './**/*.{ts,tsx,js,jsx,css,scss}';
+
+@theme {
+  /* 🔥 RESET ALL DEFAULT COLORS */
+  --color-*: initial;
+
+  /* ---------- BASE COLORS ---------- */
+  /* --color-50: #F2F2F2;
+  --color-100: #DBDBDB;
+  --color-200: #C4C4C4;
+  --color-300: #ADADAD;
+  --color-400: #969696;
+  --color-500: #808080;
+  --color-600: #696969;
+  --color-700: #525252;
+  --color-800: #3B3B3B;
+  --color-900: #242424;
+  --color-950: #0D0D0D; */
+
+  --color-25: #fdfdfd;
+  --color-50: #fafafa;
+  --color-100: #f5f5f5;
+  --color-200: #E9EAEC;
+  --color-300: #D6D7DB;
+  --color-400: #A4A7AE;
+  --color-500: #727681;
+  --color-600: #545863;
+  --color-700: #424651;
+  --color-800: #252B37;
+  --color-900: #191D28;
+  --color-950: #0A0D12;
+
+  /* ---------- TYPOGRAPHY ---------- */
+
+  /* ===== Headings ===== */
+
+  /* h1 → Display 2xl */
+  --h1-fs: 4rem; /* 64px */
+  --h1-lh: 5.625rem; /* 90px */
+  --h1-ls: -0.02em;
+  --h1-fw: 400;
+
+  /* h2 → Display xl */
+  --h2-fs: 3.75rem; /* 60px */
+  --h2-lh: 4.5rem; /* 72px */
+  --h2-ls: -0.02em;
+  --h2-fw: 400;
+
+  /* h3 → Display lg */
+  --h3-fs: 3rem; /* 48px */
+  --h3-lh: 3.75rem; /* 60px */
+  --h3-ls: -0.02em;
+  --h3-fw: 400;
+
+  /* h4 → Display md */
+  --h4-fs: 2.25rem; /* 36px */
+  --h4-lh: 3rem; /* 48px */
+  --h4-ls: -0.02em;
+  --h4-fw: 400;
+
+  /* h5 → Display sm */
+  --h5-fs: 1.875rem; /* 30px */
+  --h5-lh: 2.375rem; /* 38px */
+  --h5-ls: -0.02em;
+  --h5-fw: 400;
+
+  /* h6 → Display xs */
+  --h6-fs: 1.5rem; /* 24px */
+  --h6-lh: 2rem; /* 32px */
+  --h6-ls: -0.02em;
+  --h6-fw: 400;
+
+  /* ===== Paragraph / Text ===== */
+
+  /* p1 → Text xl */
+  --p1-fs: 1.25rem; /* 20px */
+  --p1-lh: 1.875rem; /* 30px */
+  --p1-ls: 0em;
+  --p1-fw: 400;
+
+  /* p2 → Text lg / Body */
+  --p2-fs: 1.125rem; /* 18px */
+  --p2-lh: 1.75rem; /* 28px */
+  --p2-ls: 0em;
+  --p2-fw: 400;
+
+  /* p3 → Text md */
+  --p3-fs: 1rem; /* 16px */
+  --p3-lh: 1.5rem; /* 24px */
+  --p3-ls: 0em;
+  --p3-fw: 400;
+
+  /* p4 → Text sm */
+  --p4-fs: 0.875rem; /* 14px */
+  --p4-lh: 1.25rem; /* 20px */
+  --p4-ls: 0em;
+  --p4-fw: 400;
+
+  /* p5 → Text xs */
+  --p5-fs: 0.75rem; /* 12px */
+  --p5-lh: 1.125rem; /* 18px */
+  --p5-ls: 0em;
+  --p5-fw: 400;
+
+  /* ---------- TYPOGRAPHY ---------- */
+
+  --breakpoint-*: initial;
+  --breakpoint-mobile: 0;
+  --breakpoint-tablet: 48rem;
+  --breakpoint-desktop: 80rem;
+  --breakpoint-content: 105rem;
+}
+
+@custom-media --tablet (min-width: var(--breakpoint-tablet));
+@custom-media --desktop (min-width: var(--breakpoint-desktop));
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .cv11 {
+    font-feature-settings: "cv11" 1 !important;
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* ===============================
+   Button float on hover
+================================ */
+.btn-float {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  transition:
+    transform 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+
+.btn-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   Icon move + fade
+================================ */
+.btn-float .icon-forward {
+  opacity: 0.7;
+
+  transition:
+    transform 200ms ease-out,
+    opacity 200ms ease-out;
+}
+
+.btn-float:hover .icon-forward {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* ===============================
+   Reduced motion support
+================================ */
+@media (prefers-reduced-motion: reduce) {
+  .btn-float,
+  .btn-float .icon-forward {
+    transition: none;
+  }
+
+  .btn-float:hover {
+    transform: none;
+  }
+
+  .btn-float:hover .icon-forward {
+    transform: none;
+  }
+}
+
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1, "cv11" 1;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1, "cv11" 1;
+  }
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: InterVariable, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1, "cv11" 1, "ss01" 1;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: InterVariable, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1, "cv11" 1, "ss01" 1;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
 }
+
+/* .float-on-hover {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.float-on-hover:hover, .float-on-hover:focus, .float-on-hover:active {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+} */
