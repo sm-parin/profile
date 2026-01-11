@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./progress-counter.module.scss";
 import Typography from "../library/typography";
+import { applyTheme } from "../../utils/functions/theme";
 
 const ProgressWithCounter = ({ percent }: { percent: number }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -60,11 +61,13 @@ const ProgressWithCounter = ({ percent }: { percent: number }) => {
     });
   }, [isVisible, percent]);
 
+  const { bg } = applyTheme(true);
+
   return (
     <div ref={containerRef} className={styles["container"]}>
       <div className={styles["progress"]}>
         <div
-          className={styles["progress-fill"]}
+          className={`${styles["progress-fill"]} ${bg}`}
           style={{ transform: `scaleX(${progress / 100})` }}
         />
       </div>

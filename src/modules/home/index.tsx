@@ -11,7 +11,7 @@ const Home = ({ title = "Home" }: IHomeProps) => {
   if (!data) return null;
 
   return (
-    <div>
+    <div className="displayContainer">
       <HomeHero data={data.hero} />
       <HomeConcepts data={data.concepts} />
       <HomeExperience data={data.experience} />

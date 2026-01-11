@@ -22,6 +22,7 @@ export const createTypeSequence = (
 };
 
 export const shuffleCompanies = (data: Record<string, any>) => {
+  
   const entries = Object.entries(data);
 
   // Fisher-Yates shuffle
@@ -37,4 +38,16 @@ export const shuffleCompanies = (data: Record<string, any>) => {
   }
 
   return shuffled;
+};
+
+export const hash = (string: string) => {
+  if (!string) return "";
+
+  return `#${string.toLowerCase().replaceAll(" ", "_")}`;
+};
+
+export const unhash = (hash: string) => {
+  if (!hash) return "";
+
+  return hash.replace(/^#/, "").replaceAll("_", " ");
 };

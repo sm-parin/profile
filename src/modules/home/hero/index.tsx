@@ -20,8 +20,8 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
 
   const skills = ["React", "TypeScript", "CSS", "JavaScript", "Node.js"];
 
-  const theme = "dark";
-  const { bg, text, code } = applyTheme(theme);
+  const theme = "light";
+  const { bg, text, code } = applyTheme(true);
 
   if (!data) return null;
 
@@ -39,14 +39,13 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
         <Typography variant="p2">{data.content}</Typography>
       </div>
       <div>
-        <Button label={data.primaryCta} theme={theme} />
+        <Button label={data.primaryCta} theme={false} />
         <Button
           className="col-span-6"
           label={data.secondaryCta}
-          theme={theme}
+          theme={true}
           secondary
         />
-        <Button isText label={data.secondaryCta} theme={theme} />
       </div>
       <div>
         <Marquee

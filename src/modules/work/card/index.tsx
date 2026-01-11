@@ -2,10 +2,12 @@ import React, { useMemo, useState } from "react";
 import Typography from "../../../components/library/typography";
 import { useNavigate } from "react-router-dom";
 import { applyTheme } from "../../../utils/functions/theme";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 const WorkCard = ({ data, isActive, index, route, theme }: any) => {
   const [isCardHovered, setIsCardHovered] = useState(false);
   const navigate = useNavigate();
+  const { isDesktop } = useMediaQuery();
 
   const cardClass = isActive
     ? "col-span-2 row-span-2"
@@ -27,9 +29,9 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
     []
   );
 
-  const cardNumber = isActive ? positionMap[index + 1] : "";
+  const cardNumber = isActive && isDesktop ? positionMap[index + 1] : "";
 
-  const { bg, text } = applyTheme(theme);
+  const { bg, text } = applyTheme(theme?.[1], theme?.[0]);
 
   return (
     <div

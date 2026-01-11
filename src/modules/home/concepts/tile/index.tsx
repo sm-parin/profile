@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "../../../../components/library/typography";
 import { IProjectTileProps } from "./tile.model";
 import ProgressWithCounter from "../../../../components/progress-counter";
-import styles from "./tile.module.scss";
+import { applyTheme } from "../../../../utils/functions/theme";
 
 const ProjectTile = ({
   title,
@@ -10,9 +10,9 @@ const ProjectTile = ({
   children,
   index,
 }: IProjectTileProps) => {
-  console.log(index, "index")
+  const { text } = applyTheme();
   return (
-    <div className={`${styles["block"]} ${styles[`block--${index}`]} p-4 gap-4`}>
+    <div className={`flex flex-col gap-1 pr-8 ${text}`}>
       <Typography variant="h5">{title}</Typography>
       <ProgressWithCounter percent={proficiency} />
       <Typography variant="p3">{children}</Typography>

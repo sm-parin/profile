@@ -1,10 +1,9 @@
+import { work } from "./experience/work";
 import { home } from "./home/home";
 
 export const response = {
   home,
-  work: {
-    id: "work",
-  },
+  work,
   // projects: {
   //   id: "projects",
   // },

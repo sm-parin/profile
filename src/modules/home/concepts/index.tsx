@@ -13,16 +13,18 @@ const HomeConcepts = ({ data }: IHomeConceptsProps) => {
 
   return (
     <PageContainer bgColor={bg}>
-      <div className="flex justify-between">
+      <div className="flex flex-col justify-between">
         <Typography variant="h3" className={`${text}`}>
           {data.title}
         </Typography>
-        <Button label={data.cta} isText />
+        <Typography variant="p2" className={`${text}`}>
+          {data.description}
+        </Typography>
       </div>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
         {data.content.map((concept: any, index: number) => (
           <ProjectTile
-          index={index}
+            index={index}
             key={concept.title}
             title={concept.title}
             proficiency={concept.proficiency}

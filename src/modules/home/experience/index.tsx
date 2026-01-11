@@ -7,8 +7,7 @@ import PageContainer from "../../../components/layout/page-container";
 import { applyTheme } from "../../../utils/functions/theme";
 
 const HomeExperience = ({ data }: IHomeExperienceProps) => {
-  const theme = "light";
-  const { bg, text } = applyTheme(theme);
+  const { bg, text } = applyTheme();
 
   if (!data) return null;
 
@@ -21,8 +20,8 @@ const HomeExperience = ({ data }: IHomeExperienceProps) => {
         {data.title}
       </Typography>
       <div className="flex items-center">
-        <Button theme={theme} label={data.primaryCta} />
-        <Button theme={theme} isText label={data.secondaryCta} />
+        <Button label={data.primaryCta} />
+        <Button isText label={data.secondaryCta} />
       </div>
     </PageContainer>
   );

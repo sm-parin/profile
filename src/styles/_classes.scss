@@ -74,3 +74,84 @@
   letter-spacing: var(--p5-ls);
   font-weight: var(--p5-fw);
 }
+
+.block {
+  position: relative;
+}
+
+/* Bottom border segment */
+.block::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px; /* 👈 length of bottom border */
+  height: 2px; /* border thickness */
+  background-color: #252b37;
+}
+
+/* Right border segment */
+.block::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2px; /* border thickness */
+  height: 24px; /* 👈 length of right border */
+  background-color: #252b37;
+}
+
+.gradient-dark {
+  background: linear-gradient(to right, #252b37 98.5%, #e9eaec);
+}
+
+.wdp-pc-bg {
+  background: linear-gradient(
+    to right,
+    #252b37 0%,
+    #252b37 10%,
+    #e9eaec 10%,
+    #e9eaec 100%
+  );
+}
+
+/* DEFAULT (inactive) */
+a:not(.active) .nav-indicator {
+  width: 2rem; /* w-8 */
+  background-color: rgb(226 232 240 / 0.5);
+}
+
+a:not(.active) .nav-text {
+  color: rgb(226 232 240 / 0.5);
+}
+
+/* HOVER / FOCUS */
+a:hover .nav-indicator,
+a:focus-visible .nav-indicator {
+  width: 4rem;
+  background-color: rgb(226 232 240 / 1);
+}
+
+a:hover .nav-text,
+a:focus-visible .nav-text {
+  color: rgb(226 232 240 / 1);
+}
+
+/* ACTIVE (persistent) */
+a.active .nav-indicator {
+  width: 4rem;
+  background-color: rgb(226 232 240 / 1);
+}
+
+a.active .nav-text {
+  color: rgb(226 232 240 / 1);
+}
+
+/* TRANSITION */
+.transition-all {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.displayContainer {
+  min-height: calc(100vh - 120px);
+}

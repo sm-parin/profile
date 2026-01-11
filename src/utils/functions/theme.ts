@@ -41,14 +41,14 @@ const THEME_MAP: Record<
       bg: "bg-200",
       text: "text-800",
       color: "color-800",
-      border: "border-800",
+      border: "border-200",
       code: [200, 800],
     },
     inverted: {
       bg: "bg-800",
       text: "text-200",
       color: "color-200",
-      border: "border-800",
+      border: "border-200",
       code: [800, 200],
     },
   },
@@ -72,8 +72,8 @@ const THEME_MAP: Record<
 };
 
 export const applyTheme = (
-  theme: TTheme = "default",
-  invert = false
+  invert = false,
+  theme: TTheme = "light",
 ): ThemeResult => {
   return invert ? THEME_MAP[theme].inverted : THEME_MAP[theme].normal;
 };
