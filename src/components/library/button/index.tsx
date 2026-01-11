@@ -23,7 +23,7 @@ const BUTTON_CLASSES = {
 };
 
 const Button = ({
-  theme = "default",
+  theme = null,
   secondary = false,
   isText = false,
   label = "",
@@ -33,7 +33,7 @@ const Button = ({
   className = "",
 }: IButtonProps) => {
   const { isMobileOnly } = useMediaQuery();
-  const { bg, text, border } = applyTheme(theme, isText ? false : !secondary);
+  const { bg, text, border } = applyTheme(theme !== null ? theme : isText ? false : !secondary, "light");
 
   useEffect(() => {});
   return (

@@ -1,7 +1,5 @@
-import { TTheme } from "../../../utils/functions/theme";
-
 export interface IButtonProps {
-  theme?: TTheme;
+  theme?: boolean | null;
   secondary?: boolean;
   isText?: boolean;
   label?: string;
