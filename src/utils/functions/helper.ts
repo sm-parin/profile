@@ -1,3 +1,7 @@
+export const isLocalhost = () => {
+  return window.location.href.includes("localhost");
+};
+
 export const recursivelySetData = (obj: any, segments: string[]): any => {
   if (segments.length === 0) {
     return obj;
@@ -22,7 +26,6 @@ export const createTypeSequence = (
 };
 
 export const shuffleCompanies = (data: Record<string, any>) => {
-  
   const entries = Object.entries(data);
 
   // Fisher-Yates shuffle

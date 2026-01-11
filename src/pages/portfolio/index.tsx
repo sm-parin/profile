@@ -13,6 +13,7 @@ import About from "../../modules/about";
 import ContactMe from "../../modules/contact";
 import WorkDetailPage from "../../modules/work/detail";
 import { response } from "../../data/response";
+import { isLocalhost } from "../../utils/functions/helper";
 
 export const Portfolio = () => {
   const siteMap = [
@@ -32,7 +33,7 @@ export const Portfolio = () => {
   ];
 
   const router = createBrowserRouter(siteMap, {
-    basename: "/profile",
+    basename: `${isLocalhost() ? "/" : "/profile"}`,
   });
 
   return <RouterProvider router={router} />;
