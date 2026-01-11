@@ -18,7 +18,8 @@ export const AppProvider: React.FC<{ children: ReactNode; response: any }> = ({
   const [data, setData] = React.useState<any>(null);
 
   useEffect(() => {
-    const pathSegments = location.pathname.split("/").filter(Boolean);
+    let pathname = location.pathname === "/" ? "/home" : location.pathname;
+    const pathSegments = pathname.split("/").filter(Boolean);
     const data = recursivelySetData(response, pathSegments);
     setData(data);
   }, [location, response]);
