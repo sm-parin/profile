@@ -25,7 +25,7 @@ export const Portfolio = () => {
         { path: "work", element: <Work data={response.work} /> },
         {
           path: "work/:workId",
-          element: <WorkDetailPage />,
+          element: <WorkDetailPage response={response.work} />,
         },
         { path: "about", element: <About data={response.about} /> },
       ],

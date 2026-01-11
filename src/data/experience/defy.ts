@@ -5,10 +5,10 @@ export const defy = {
   experience: "Internship",
   type: "Remote",
   description: "DESCRIPTION",
+  tags: ["Products, People"],
   content: [
     {
       role: "Community Moderator Intern",
-      tags: ["Products, People"],
       responsibilities: [
         "Managed and engaged the Defy Club Telegram announcements channel (2000+ members), Defy Club Discussion Group (500+ members), and created a Telegram support bot, ensuring efficient communication and support within the community.",
         "Encouraged and moderated engagement within the community, creating an inclusive and active environment for members to connect and contribute.",

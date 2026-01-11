@@ -5,10 +5,11 @@ export const mentza = {
   experience: "Internship",
   type: "Remote",
   description: "DESCRIPTION",
+      tags: ["Products, People"],
+
   content: [
     {
       role: "Community Executive",
-      tags: ["Products, People"],
       responsibilities: [
         "Administrated and monitored circles, ensuring successful commencement of scheduled sessions and fostering meaningful connections within the Mentza community.",
         "Developed content writing skills through engagement with over 200 speakers, effectively conveying their insights and contributions to the Mentza community.",

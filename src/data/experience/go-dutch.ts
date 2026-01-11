@@ -4,12 +4,13 @@ export const goDutch = {
   location: "Remote",
   experience: "Internship",
   type: "Remote",
+      tags: ["Products", "People"],
+
   description:
     "Contributed across partnerships, product initiatives, and program execution, working closely with teams, stakeholders, and student communities to scale engagement and adoption.",
   content: [
     {
       role: "Channel Trainer",
-      tags: ["Products", "People"],
       responsibilities: [
         "Led and supported a team of 8 Cluster Managers, ensuring effective execution of their respective clusters while fostering collaboration and alignment with organizational goals.",
         "Mentored newly promoted Channel Leads through structured guidance, training, and support, improving performance and easing leadership transitions.",

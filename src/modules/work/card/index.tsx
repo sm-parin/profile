@@ -7,11 +7,14 @@ import useMediaQuery from "../../../hooks/useMediaQuery";
 const WorkCard = ({ data, isActive, index, route, theme }: any) => {
   const [isCardHovered, setIsCardHovered] = useState(false);
   const navigate = useNavigate();
-  const { isDesktop } = useMediaQuery();
+  const { isDesktop, isTablet, isTabletOnly } = useMediaQuery();
 
-  const cardClass = isActive
-    ? "col-span-2 row-span-2"
-    : "col-span-1 row-span-1";
+  const cardClass =
+    isActive && isDesktop
+      ? "col-span-2 row-span-2"
+      : isActive && isTabletOnly
+      ? "col-span-2 row-span-1"
+      : "col-span-1 row-span-1";
 
   const positionMap = useMemo(
     () =>
@@ -31,6 +34,8 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
 
   const cardNumber = isActive && isDesktop ? positionMap[index + 1] : "";
 
+  const roles: string[] = data?.content?.map((item: any) => item.role);
+
   const { bg, text } = applyTheme(theme?.[1], theme?.[0]);
 
   return (
@@ -42,11 +47,31 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
       onMouseLeave={() => setIsCardHovered(false)}
       onClick={() => navigate(`/work/${route}`)}
     >
-      <div className={text}>
-        <Typography variant="h6">{data.company}</Typography>
-        <Typography variant="h3">{data.priority}</Typography>
-        <Typography variant="p3">{data.duration}</Typography>
-        <Typography variant="p3">{data.description}</Typography>
+      <div className={`${text} flex flex-col gap-1 justify-between h-full`}>
+        <div className="flex justify-between">
+          <div className="flex flex-col gap-1">
+            <Typography variant="h6">{data.company}</Typography>
+            <div className="flex">
+              <Typography markup="span" variant="p3">
+                {"0" + data.priority + ". "}
+              </Typography>
+              <Typography markup="span" variant="p3">
+                {data.experience}
+              </Typography>
+            </div>
+          </div>
+
+          {isActive && isTablet && (
+            <div className="flex flex-col justify-between items-end gap-1">
+              <Typography variant="p3">{data.duration}</Typography>
+              <Typography variant="p3">{data.tags.join(", ")}</Typography>
+            </div>
+          )}
+        </div>
+        <Typography variant="p2" className={isDesktop ? "" : "truncate"}>{roles.join(", ")}</Typography>
+        {isActive || isDesktop && (
+          <Typography variant="p3" className={isActive ? "" : "truncate"}>{data.description}</Typography>
+        )}
       </div>
     </div>
   );

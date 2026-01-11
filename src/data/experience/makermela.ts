@@ -5,10 +5,11 @@ export const makermela = {
   experience: "Volunteer",
   type: "Hybrid",
   description: "DESCRIPTION",
+  tags: ["Products, People"],
+
   content: [
     {
       role: "Vice Chairperson of Partnerships",
-      tags: ["Products, People"],
       responsibilities: [
         "Successfully brought in 24 partners for Maker Mela 2021, including 8 global partners, expanding the event's network and international impact.",
         "Implemented innovative strategies to collaborate with global partners, fab labs, makerspaces, and organizations, enhancing the diversity and reach of Maker Mela 2021.",
@@ -34,7 +35,6 @@ export const makermela = {
     },
     {
       role: "Product Management Intern",
-      tags: ["Products, People"],
       responsibilities: [
         "Coordinated with 16 E-Cells across Mumbai to organize and host a successful competition as part of the ChangeMakers' Conclave event.",
         "Secured the participation of 4 partners, strengthening the resources and impact of the ChangeMakers' Conclave event.",

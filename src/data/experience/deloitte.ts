@@ -5,10 +5,11 @@ export const deloitte = {
   experience: "Professional",
   type: "Hybrid",
   description: "DESCRIPTION",
+      tags: ["Products, People"],
+
   content: [
     {
       role: "Analyst",
-      tags: ["Products, People"],
       responsibilities: [
         "Ideated and designed a marketplace for existing 2D floor plan designs, incorporating features such as inspiration, value proposition, unique selling points, cost structure determination, modification criteria, eligibility, filters, metadata collection, constraints, and terms and conditions.",
         "Fulfilled 13% of over 180 customer requests by coordinating with stakeholders and Area Managers across 7 cities during a one-month pilot of the Rooftop Waterproofing Service; utilized Excel and conducted funnel analysis to generate insights on customer acquisition, retention, and drop rates.",

@@ -65,10 +65,10 @@ const WorkDetailPage = ({ response }: any) => {
 
   let data;
 
-  if (!workId || !response.work[workId]) {
+  if (!workId || !response[workId]) {
     navigate("/");
   } else {
-    data = response.work[workId];
+    data = response[workId];
   }
   // const roles: string[] = data?.content?.map((item: any) => item.role) ?? [];
 

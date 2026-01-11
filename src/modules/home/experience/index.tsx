@@ -9,15 +9,13 @@ import { applyTheme } from "../../../utils/functions/theme";
 const HomeExperience = ({ data }: IHomeExperienceProps) => {
   const { bg, text } = applyTheme();
 
-  
-
   return (
     <PageContainer bgColor={bg}>
       <Typography className={text} variant="h2">
         {data.title}
       </Typography>
-      <Typography className={text} variant="p2">
-        {data.title}
+      <Typography className={`${text} whitespace-pre-line`} variant="p2">
+        {data.description}
       </Typography>
       <div className="flex items-center">
         <Button label={data.primaryCta} />

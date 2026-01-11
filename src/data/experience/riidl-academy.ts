@@ -4,11 +4,11 @@ export const riidlAcademy = {
   location: "Remote",
   experience: "Internship",
   type: "Remote",
+      tags: ["Products, People"],
   description: "DESCRIPTION",
   content: [
     {
       role: "Community Content Manager",
-      tags: ["Products, People"],
       responsibilities: [
         "Successfully promoted the course to over 2000 students through various social media platforms, resulting in increased enrollment.",
         "Implemented effective strategies to expand the course's reach and drive admissions, leading to notable improvements in both areas.",

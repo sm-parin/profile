@@ -5,10 +5,11 @@ export const fbDevC = {
   experience: "Volunteer",
   type: "Remote",
   description: "DESCRIPTION",
+      tags: ["Products, People"],
+
   content: [
     {
       role: "Community Content Manager",
-      tags: ["Products, People"],
       responsibilities: [
         " Actively contributed to event management, delegate relations, and partnership building with technical councils, ensuring successful event outcomes and valuable collaborations.",
         "Prepared detailed event reports, providing comprehensive insights and analysis to support decision-making and future event planning.",

@@ -11,7 +11,9 @@ const WorkRole = ({ data }: any) => {
   return (
     <div id={data.role} className={`flex flex-col gap-4 ${text}`}>
       <Typography variant="h4">{data.role}</Typography>
-      <SkillStack title="Tags" stack={data.tags} />
+      <SkillStack title="Skills" stack={data.skills} />
+
+      {/* <SkillStack title="Tags" stack={data.tags} /> */}
       <div>
         <ul className="flex flex-col gap-2">
           {data.responsibilities.map((responsibility: any, index: number) => (
@@ -21,10 +23,11 @@ const WorkRole = ({ data }: any) => {
           ))}
         </ul>
       </div>
-      <SkillStack title="Skills" stack={data.skills} />
       <SkillStack title="Tools" stack={data.tools} />
       <div>
-        <Typography variant="p1" className="mb-50">Supporting Documents</Typography>
+        <Typography variant="p1" className="mb-50">
+          Supporting Documents
+        </Typography>
       </div>
     </div>
   );

@@ -43,6 +43,26 @@ export const shuffleCompanies = (data: Record<string, any>) => {
   return shuffled;
 };
 
+export const sortCompanies = <T extends Record<string, any>>(
+  data: Record<string, T>,
+  key: keyof T = "priority"
+): Record<string, T> => {
+  const entries = Object.entries(data);
+
+  entries.sort(([, a], [, b]) => {
+    const va = a[key];
+    const vb = b[key];
+
+    // Push undefined/null to the end
+    if (va == null) return 1;
+    if (vb == null) return -1;
+
+    return Number(va) - Number(vb);
+  });
+
+  return Object.fromEntries(entries);
+};
+
 export const hash = (string: string) => {
   if (!string) return "";
 
