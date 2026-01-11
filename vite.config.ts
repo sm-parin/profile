@@ -4,10 +4,11 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/sm-parin.github.io/",
+  base: "/profile/", // ✅ MUST match repo name
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
   },
 });
+
