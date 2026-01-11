@@ -7,7 +7,6 @@ import PageContainer from "../../../components/layout/page-container";
 import Typography from "../../../components/library/typography";
 
 const HomeConcepts = ({ data }: IHomeConceptsProps) => {
-  if (!data) return null;
 
   const { bg, text } = applyTheme();
 

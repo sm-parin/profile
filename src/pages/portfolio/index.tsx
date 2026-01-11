@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import RootLayout from "../../components/layout/root-layout";
 
 import Home from "../../modules/home";
@@ -7,25 +12,21 @@ import Projects from "../../modules/projects";
 import About from "../../modules/about";
 import ContactMe from "../../modules/contact";
 import WorkDetailPage from "../../modules/work/detail";
-import { AppProvider } from "../../utils/context/AppContext";
 import { response } from "../../data/response";
-
-const AppLayout = () => (
-  <AppProvider response={response}>
-    <RootLayout />
-  </AppProvider>
-);
 
 export const Portfolio = () => {
   const siteMap = [
     {
       path: "/",
-      element: <AppLayout />,
+      element: <RootLayout data={response} />,
       children: [
-        { index: true, element: <Home /> },
-        { path: "work", element: <Work /> },
-        { path: "work/:workId", element: <WorkDetailPage /> },
-        { path: "about", element: <About /> },
+        { index: true, element: <Home data={response.home} /> },
+        { path: "work", element: <Work data={response.work} /> },
+        {
+          path: "work/:workId",
+          element: <WorkDetailPage />,
+        },
+        { path: "about", element: <About data={response.about} /> },
       ],
     },
   ];

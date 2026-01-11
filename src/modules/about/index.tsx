@@ -23,7 +23,7 @@ const AboutRightSection = () => {
   );
 };
 
-const About = () => {
+const About = ({ data }: any) => {
   return (
     <SectionalLayout
       leftSection={<AboutLeftSection />}

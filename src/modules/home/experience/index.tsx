@@ -9,7 +9,7 @@ import { applyTheme } from "../../../utils/functions/theme";
 const HomeExperience = ({ data }: IHomeExperienceProps) => {
   const { bg, text } = applyTheme();
 
-  if (!data) return null;
+  
 
   return (
     <PageContainer bgColor={bg}>

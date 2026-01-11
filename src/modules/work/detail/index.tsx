@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typography from "../../../components/library/typography";
 import WorkRole from "./role";
 import PageContainer from "../../../components/layout/page-container";
 import { applyTheme } from "../../../utils/functions/theme";
 import NavigationChip from "../../../components/navigation-chip";
 import { useScrollNavigation } from "../../../hooks/useScrollNavigation";
-import { useAppContext } from "../../../utils/context/AppContext";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import SectionalLayout from "../../../components/layout/sectional-layout";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
   const { bg, text } = applyTheme(true);
@@ -59,13 +59,20 @@ const WdpRightSection = ({ data, sectionRefs }: any) => {
   );
 };
 
-const WorkDetailPage = () => {
-  const { data } = useAppContext();
+const WorkDetailPage = ({ response }: any) => {
+  const { workId } = useParams<{ workId: string }>();
+  const navigate = useNavigate();
+
+  let data;
+
+  if (!workId || !response.work[workId]) {
+    navigate("/");
+  } else {
+    data = response.work[workId];
+  }
   // const roles: string[] = data?.content?.map((item: any) => item.role) ?? [];
 
   // const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(roles);
-
-  if (!data) return null;
 
   return (
     <SectionalLayout

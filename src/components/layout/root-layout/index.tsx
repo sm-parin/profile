@@ -1,13 +1,12 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Header from "../header";
-import Footer from "../footer"
+import Footer from "../footer";
 
-const RootLayout = () => {
-
+const RootLayout = ({ data }: any) => {
   return (
     <>
       <header>
-        <Header />
+        <Header data={data} />
       </header>
       <main>
         <Outlet />

@@ -23,7 +23,6 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
   const theme = "light";
   const { bg, text, code } = applyTheme(true);
 
-  if (!data) return null;
 
   return (
     <PageContainer bgColor={`${bg}`} className="gap-y-4">

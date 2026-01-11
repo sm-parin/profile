@@ -4,23 +4,19 @@ import { shuffleCompanies } from "../../utils/functions/helper";
 import styles from "./work.module.scss";
 import { TTheme } from "../../utils/functions/theme";
 import { work } from "../../data/experience/work";
-import { useAppContext } from "../../utils/context/AppContext";
 
-const Work = () => {
+const Work = ({ data }: any) => {
   const [activeCard, setActiveCard] = useState<number>(1);
 
-  const { data } = useAppContext();
-  // const mockLength = Object.keys(data)?.length;
-
   const shuffledCompanies = useMemo(() => {
-    if (!data) return;
     return shuffleCompanies(data);
   }, [data]);
 
   useEffect(() => {
-    if (!data) return;
     const interval = setInterval(() => {
-      setActiveCard((prev) => (prev >= Object.keys(data).length ? 1 : prev + 1));
+      setActiveCard((prev) =>
+        prev >= Object.keys(data).length ? 1 : prev + 1
+      );
     }, 5000);
 
     return () => clearInterval(interval);
@@ -33,8 +29,6 @@ const Work = () => {
     Internship: ["light", false],
     Volunteer: ["default", false],
   };
-
-  if (!data) return;
 
   return (
     <div

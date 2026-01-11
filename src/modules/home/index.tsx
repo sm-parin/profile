@@ -2,14 +2,9 @@ import React from "react";
 import { IHomeProps } from "./home.model";
 import HomeHero from "./hero";
 import HomeExperience from "./experience";
-import { useAppContext } from "../../utils/context/AppContext";
 import HomeConcepts from "./concepts";
 
-const Home = ({ title = "Home" }: IHomeProps) => {
-  const { data } = useAppContext();
-
-  if (!data) return null;
-
+const Home = ({ data }: any) => {
   return (
     <div className="displayContainer">
       <HomeHero data={data.hero} />
