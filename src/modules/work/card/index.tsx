@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { applyTheme } from "../../../utils/functions/theme";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
-const WorkCard = ({ data, index, route, theme }: any) => {
-  const isActive = index === 6;
-
+const WorkCard = ({ data, isActive, index, route, theme }: any) => {
   const [isCardHovered, setIsCardHovered] = useState(false);
   const navigate = useNavigate();
   const { isDesktop, isTablet, isTabletOnly } = useMediaQuery();
