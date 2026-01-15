@@ -28,14 +28,16 @@ const Header = ({ data }: any) => {
                   ${text}
                   capitalize
                   px-4
-                  border-r
                   hover:underline
-                  ${last === index ? "border-none" : ""}
+                  border-r
+                  ${last === index ? "border-none pr-0" : ""}
                   ${border}
-                  ${isActive ? "underline" : ""}
                 `}
             >
-              <Typography variant="p1">
+              <Typography
+                variant="p1"
+                className={`${isActive ? "border-b" : ""} ${border}`}
+              >
                 <NavLink to={path}>{route}</NavLink>
               </Typography>
             </li>
