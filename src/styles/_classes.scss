@@ -159,9 +159,11 @@ a.active .nav-text {
 
   @include mixins.tablet {
     min-height: calc(100vh - 108px);
+    max-height: calc(100vh - 108px);
   }
 
   @include mixins.desktop {
     min-height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
   }
 }

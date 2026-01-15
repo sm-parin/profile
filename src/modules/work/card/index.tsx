@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { applyTheme } from "../../../utils/functions/theme";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
-const WorkCard = ({ data, isActive, index, route, theme }: any) => {
+const WorkCard = ({ data, index, route, theme }: any) => {
+  const isActive = index === 6;
+
   const [isCardHovered, setIsCardHovered] = useState(false);
   const navigate = useNavigate();
   const { isDesktop, isTablet, isTabletOnly } = useMediaQuery();
@@ -49,7 +51,7 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
       onClick={() => navigate(`/work/${route}`)}
     >
       <div
-        className={`${text} flex flex-col gap-8 justify-between h-full ${data.experience === "Professional" ? "border-200" : "border-800"} border p-4`}
+        className={`${text} flex flex-col desktop:gap-8 justify-between h-full ${data.experience === "Professional" ? "border-200" : "border-800"} border p-4`}
       >
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
@@ -62,7 +64,9 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
                 {data.experience}
               </Typography>
             </div>
-            {isDesktop && <RoleListInWorkCard roles={roles} className="mt-3" />}
+            {isDesktop && isActive && (
+              <RoleListInWorkCard roles={roles} className="mt-3" />
+            )}
           </div>
 
           {isActive && isTablet && (
@@ -74,22 +78,19 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
             </div>
           )}
         </div>
-        {!isDesktop && <RoleListInWorkCard roles={roles} />}
-        {(isActive || isDesktop) && (
+        {((isDesktop && !isActive) || !isDesktop) && (
+          <RoleListInWorkCard roles={roles} />
+        )}
+        {isActive && isDesktop && (
           <div
             className={`${isActive ? "h-full flex flex-col justify-between" : ""}`}
           >
             <Typography variant="p3" className={isActive ? "" : "line-clamp-2"}>
               {data.description}
             </Typography>
-            {isActive && isDesktop && (
-              <Typography
-                variant="p2"
-                className={isActive ? "" : "line-clamp-2"}
-              >
-                {skills.join(", ")}
-              </Typography>
-            )}
+            <Typography variant="p2" className={isActive ? "" : "line-clamp-2"}>
+              {skills.join(", ")}
+            </Typography>
           </div>
         )}
       </div>
