@@ -37,14 +37,14 @@ const Work = ({ data }: any) => {
     Volunteer: ["default", false],
   };
 
-  const { bg } = applyTheme(true);
+  const { bg } = applyTheme();
   const { border } = applyTheme(true, "default");
 
   return (
     <div
-      className={`grid grid-cols-1 gap-px tablet:grid-cols-2 tablet:grid-rows-5 desktop:grid-cols-4 desktop:grid-rows-3 grid-flow-dense ${
+      className={`grid grid-cols-1 tablet:grid-cols-2 tablet:grid-rows-5 desktop:grid-cols-4 desktop:grid-rows-3 grid-flow-dense ${
         isTablet ? "displayContainer" : ""
-      } ${bg} ${border} border-b`}
+      } ${bg}`}
     >
       {Object.entries(isTablet ? shuffledCompanies : sortedCompanies).map(
         ([key, company], index) => (
