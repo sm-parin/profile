@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import WorkCard from "./card";
 import { shuffleCompanies, sortCompanies } from "../../utils/functions/helper";
 import styles from "./work.module.scss";
-import { TTheme } from "../../utils/functions/theme";
+import { applyTheme, TTheme } from "../../utils/functions/theme";
 import { work } from "../../data/experience/work";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
@@ -37,11 +37,14 @@ const Work = ({ data }: any) => {
     Volunteer: ["default", false],
   };
 
+  const { bg } = applyTheme(true);
+  const { border } = applyTheme(true, "default");
+
   return (
     <div
-      className={`grid grid-cols-1 tablet:grid-cols-2 tablet:grid-rows-5 desktop:grid-cols-4 desktop:grid-rows-3 grid-flow-dense ${
-        isTablet ? "workContainer" : ""
-      }`}
+      className={`grid grid-cols-1 gap-px tablet:grid-cols-2 tablet:grid-rows-5 desktop:grid-cols-4 desktop:grid-rows-3 grid-flow-dense ${
+        isTablet ? "displayContainer" : ""
+      } ${bg} ${border} border-b`}
     >
       {Object.entries(isTablet ? shuffledCompanies : sortedCompanies).map(
         ([key, company], index) => (

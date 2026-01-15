@@ -40,7 +40,7 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
 
   return (
     <div
-      className={`${cardClass} ${cardNumber} border ${bg} p-4 ${
+      className={`${cardClass} ${cardNumber} ${bg} p-4 ${
         isCardHovered ? "cursor-pointer" : ""
       }`}
       onMouseEnter={() => setIsCardHovered(true)}
