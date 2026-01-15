@@ -159,6 +159,18 @@ a.active .nav-text {
 
   @include mixins.tablet {
     min-height: calc(100vh - 108px);
+  }
+
+  @include mixins.desktop {
+    min-height: calc(100vh - 120px);
+  }
+}
+
+.workContainer {
+  min-height: calc(100vh - 96px);
+
+  @include mixins.tablet {
+    min-height: calc(100vh - 108px);
     max-height: calc(100vh - 108px);
   }
 
@@ -169,6 +181,16 @@ a.active .nav-text {
 }
 
 .compContainer {
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  @include mixins.tablet {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
 }

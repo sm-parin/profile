@@ -14,7 +14,7 @@ const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
   // const { isTablet } = useMediaQuery();
 
   return (
-    <div className={`${bg} p-4 relative`}>
+    <div className={`${bg} relative`}>
       <div className={`${text} sticky top-0`}>
         <Typography variant="p2">{data.company}</Typography>
         <Typography variant="p2">{data.location}</Typography>
@@ -44,7 +44,7 @@ const WdpRightSection = ({ data, sectionRefs }: any) => {
   return (
     <div className={`${bg} ${text}`}>
       {data &&
-        data?.content?.map((roleData: any) => (
+        data?.content?.map((roleData: any, index: number) => (
           <section
             key={roleData.role}
             // ref={(el) => {
@@ -52,7 +52,7 @@ const WdpRightSection = ({ data, sectionRefs }: any) => {
             // }}
             // data-role={roleData.role}
           >
-            <WorkRole data={roleData} />
+            <WorkRole data={roleData} index={index} />
           </section>
         ))}
     </div>

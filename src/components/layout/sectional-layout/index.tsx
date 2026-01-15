@@ -13,7 +13,7 @@ const SectionalLayout = ({ leftSection, rightSection }: any) => {
       className={`grid grid-cols-12 displayContainer`}
       bgColor={isTabletOnly ? "wdp-pc-bg" : `${bg}`}
     >
-      <div className={`${bgI} col-span-12 tablet:col-span-4 p-4 relative`}>
+      <div className={`${bgI} col-span-12 tablet:col-span-4 compContainer p-4 tablet:pr-4 relative`}>
         <div className={`${textI} sticky top-0`}>{leftSection}</div>
       </div>
       <div
@@ -24,7 +24,7 @@ const SectionalLayout = ({ leftSection, rightSection }: any) => {
     </PageContainer>
   ) : (
     <>
-      <PageContainer bgColor={bgI}>{leftSection}</PageContainer>
+      <PageContainer bgColor={bgI} className="py-10">{leftSection}</PageContainer>
       <PageContainer bgColor={bg}>{rightSection}</PageContainer>
     </>
   );

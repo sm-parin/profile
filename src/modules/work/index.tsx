@@ -43,7 +43,7 @@ const Work = ({ data }: any) => {
   return (
     <div
       className={`grid grid-cols-1 tablet:grid-cols-2 tablet:grid-rows-5 desktop:grid-cols-4 desktop:grid-rows-3 grid-flow-dense ${
-        isTablet ? "displayContainer" : ""
+        isTablet ? "workContainer" : ""
       } ${bg}`}
     >
       {Object.entries(isTablet ? shuffledCompanies : sortedCompanies).map(
