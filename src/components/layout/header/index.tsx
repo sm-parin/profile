@@ -8,7 +8,7 @@ const Header = ({ data }: any) => {
   const { bg, text, border } = applyTheme(true);
   const location = useLocation();
 
-  const currentPath = location.pathname;
+  const currentPath = location.pathname.split("/")[1];
 
   return (
     <PageContainer
@@ -18,7 +18,7 @@ const Header = ({ data }: any) => {
       <ul className="flex">
         {Object.keys(data).map((route, index) => {
           const last = Object.keys(data).length - 1;
-          const path = route === "home" ? "/" : `/${route}`;
+          const path = route === "home" ? "" : `${route}`;
           const isActive = currentPath === path;
 
           return (
