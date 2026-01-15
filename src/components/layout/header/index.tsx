@@ -28,7 +28,7 @@ const Header = ({ data }: any) => {
                   ${text}
                   capitalize
                   px-4
-                  hover:underline
+                  group
                   border-r
                   ${last === index ? "border-none pr-0" : ""}
                   ${border}
@@ -36,7 +36,7 @@ const Header = ({ data }: any) => {
             >
               <Typography
                 variant="p1"
-                className={`${isActive ? "border-b" : ""} ${border}`}
+                className={`${isActive ? "border-b" : ""} ${border} group-hover:border-b`}
               >
                 <NavLink to={path}>{route}</NavLink>
               </Typography>
