@@ -14,7 +14,7 @@ const HomeExperience = ({ data }: IHomeExperienceProps) => {
   const description = data.description.split("\n");
 
   return (
-    <PageContainer bgColor={bg} className="flex flex-col pt-20 py-10 gap-y-4">
+    <PageContainer bgColor={bg} className="flex flex-col compContainer gap-y-4">
       <Typography className={text} variant="h3">
         {data.title}
       </Typography>

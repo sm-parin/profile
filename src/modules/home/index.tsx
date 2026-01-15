@@ -6,7 +6,7 @@ import HomeConcepts from "./concepts";
 
 const Home = ({ data }: any) => {
   return (
-    <div className="displayContainer">
+    <div>
       <HomeHero data={data.hero} />
       <HomeConcepts data={data.concepts} />
       <HomeExperience data={data.experience} />

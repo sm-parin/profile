@@ -11,7 +11,7 @@ const HomeConcepts = ({ data }: IHomeConceptsProps) => {
   const { bg, text } = applyTheme();
 
   return (
-    <PageContainer bgColor={`${bg} pt-20 pb-10 flex flex-col`}>
+    <PageContainer bgColor={`${bg} compContainer flex flex-col`}>
       <div className="flex flex-col justify-between gap-y-4">
         <Typography variant="h3" className={`${text}`}>
           {data.title}
