@@ -5,8 +5,7 @@ export const fbDevC = {
   experience: "Volunteer",
   type: "Remote",
   description: "DESCRIPTION",
-      tags: ["Products, People"],
-
+  tags: ["Products", "People"],
   content: [
     {
       role: "Community Content Manager",

@@ -5,8 +5,7 @@ export const deloitte = {
   experience: "Professional",
   type: "Hybrid",
   description: "DESCRIPTION",
-      tags: ["Products, People"],
-
+  tags: ["Products", "People"],
   content: [
     {
       role: "Analyst",

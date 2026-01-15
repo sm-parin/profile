@@ -4,7 +4,7 @@ export const riidlAcademy = {
   location: "Remote",
   experience: "Internship",
   type: "Remote",
-      tags: ["Products, People"],
+  tags: ["Products", "People"],
   description: "DESCRIPTION",
   content: [
     {

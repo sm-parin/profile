@@ -3,6 +3,7 @@ export interface ITypographyProps {
   markup?: string;
   children: React.ReactNode;
   className?: string;
+  [key: string]: any;
 }
 
 export type TTypographyVariant =

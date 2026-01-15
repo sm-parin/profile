@@ -5,7 +5,7 @@ export const defy = {
   experience: "Internship",
   type: "Remote",
   description: "DESCRIPTION",
-  tags: ["Products, People"],
+  tags: ["Products", "People"],
   content: [
     {
       role: "Community Moderator Intern",

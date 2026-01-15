@@ -10,29 +10,62 @@ import SectionalLayout from "../../../components/layout/sectional-layout";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
-  const { bg, text } = applyTheme(true);
-  // const { isTablet } = useMediaQuery();
+  const { bg: bgI, text: textI } = applyTheme(true);
+  const { bg, text } = applyTheme();
+
+  const { isTablet } = useMediaQuery();
 
   return (
-    <div className={`${bg} relative`}>
-      <div className={`${text} sticky top-0`}>
-        <Typography variant="p2">{data.company}</Typography>
-        <Typography variant="p2">{data.location}</Typography>
-        <Typography variant="p2">
-          {data.experience} | {data.type}
-        </Typography>
-        <Typography variant="p2">{data.duration}</Typography>
+    <div className={`${bgI} relative`}>
+      <div className={`${textI} sticky top-0 flex flex-col gap-4 tablet:gap-8`}>
+        <div className="flex flex-col gap-2">
+          <Typography variant="h3">{data.company}</Typography>
+          <div className="flex gap-2 flex-wrap">
+            <div className={`${bgI} ${textI} px-1 border-200 border-l`}>
+              <Typography variant="p3" className="pl-2 border-200 border-l">
+                {data.experience}
+              </Typography>
+            </div>
+            <div className={`${bgI} ${textI} px-1 border-200 border-l`}>
+              <Typography variant="p3" className="pl-2 border-200 border-l">
+                {data.type}
+              </Typography>
+            </div>
+          </div>
+        </div>
 
-        {/* {isTablet &&
-          roles.length > 1 &&
-          roles.map((role: string) => (
-            <NavigationChip
-              key={role}
-              role={role}
-              isActive={role === activeRole}
-              onClick={scrollToRole}
-            />
-          ))} */}
+        {/* <div className="flex flex-col gap-4 tablet:gap-2"> */}
+        <div className="flex flex-row justify-between items-center tablet:flex-col tablet:justify-start tablet:items-start italic">
+          <Typography variant="p3">{data.duration}</Typography>
+          {data.location && (
+            <Typography variant="p3">{data.location}</Typography>
+          )}
+        </div>
+        {/* </div> */}
+
+        <div className="flex gap-2 flex-wrap">
+          {data.tags.map((tag: string, idx: number) => (
+            <div className={`${bg} ${text} p-1`} key={idx}>
+              <Typography variant="p3" className="px-2 border-800 border-l-4">
+                {tag}
+              </Typography>
+            </div>
+          ))}
+        </div>
+
+        {isTablet && (
+          <div>
+            {roles.length > 1 &&
+              roles.map((role: string) => (
+                <NavigationChip
+                  key={role}
+                  role={role}
+                  isActive={role === activeRole}
+                  onClick={scrollToRole}
+                />
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -45,15 +78,15 @@ const WdpRightSection = ({ data, sectionRefs }: any) => {
     <div className={`${bg} ${text}`}>
       {data &&
         data?.content?.map((roleData: any, index: number) => (
-          <section
+          <WorkRole
+            data={roleData}
+            index={index}
             key={roleData.role}
-            // ref={(el) => {
-            //   sectionRefs.current[roleData.role] = el;
-            // }}
-            // data-role={roleData.role}
-          >
-            <WorkRole data={roleData} index={index} />
-          </section>
+            ref={(el: any) => {
+              sectionRefs.current[roleData.role] = el;
+            }}
+            dataRole={roleData.role}
+          />
         ))}
     </div>
   );
@@ -70,26 +103,21 @@ const WorkDetailPage = ({ response }: any) => {
   } else {
     data = response[workId];
   }
-  // const roles: string[] = data?.content?.map((item: any) => item.role) ?? [];
+  const roles: string[] = data?.content?.map((item: any) => item.role) ?? [];
 
-  // const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(roles);
+  const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(roles);
 
   return (
     <SectionalLayout
       leftSection={
         <WdpLeftSection
           data={data}
-          // scrollToRole={scrollToRole}
-          // activeRole={activeRole}
-          // roles={roles}
+          scrollToRole={scrollToRole}
+          activeRole={activeRole}
+          roles={roles}
         />
       }
-      rightSection={
-        <WdpRightSection
-          data={data}
-          // sectionRefs={sectionRefs}
-        />
-      }
+      rightSection={<WdpRightSection data={data} sectionRefs={sectionRefs} />}
     />
   );
 };

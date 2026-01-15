@@ -6,11 +6,12 @@ const Typography = ({
   markup,
   className = "",
   children,
+  ...props
 }: ITypographyProps) => {
   const component = markup ? markup : variant.startsWith("p") ? "p" : variant;
   return React.createElement(
     component,
-    { className: `${variant} ${className}` },
+    { className: `${variant} ${className}`, ...props },
     children
   );
 };

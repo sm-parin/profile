@@ -5,8 +5,7 @@ export const makermela = {
   experience: "Volunteer",
   type: "Hybrid",
   description: "DESCRIPTION",
-  tags: ["Products, People"],
-
+  tags: ["Products", "People"],
   content: [
     {
       role: "Vice Chairperson of Partnerships",

@@ -5,8 +5,7 @@ export const itlh = {
   experience: "Internship",
   type: "Hybrid",
   description: "DESCRIPTION",
-      tags: ["Products, People"],
-
+  tags: ["Products", "People"],
   content: [
     {
       role: "Product x Community Management Intern",

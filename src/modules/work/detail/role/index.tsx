@@ -2,8 +2,9 @@ import React from "react";
 import Typography from "../../../../components/library/typography";
 import { applyTheme } from "../../../../utils/functions/theme";
 import useMediaQuery from "../../../../hooks/useMediaQuery";
+import Button from "../../../../components/library/button";
 
-const WorkRole = ({ data, index }: any) => {
+const WorkRole = ({ data, index, key, ref, dataRole }: any) => {
   const { text } = applyTheme();
   const { isTablet } = useMediaQuery();
   const { bg: bgI, text: textI } = applyTheme(true);
@@ -12,10 +13,12 @@ const WorkRole = ({ data, index }: any) => {
 
   return (
     <div
-      id={data.role}
+      key={key}
       className={`flex flex-col border-b gap-6 ${text} ${!isTablet && index === 0 ? "py-10" : "compContainer"}`}
     >
-      <Typography variant="h3">{data.role}</Typography>
+      <Typography variant="h3" ref={ref} data-role={dataRole}>
+        {data.role}
+      </Typography>
 
       <div className="flex gap-2 flex-wrap">
         {data.skills.map((skill: string, idx: number) => (
@@ -37,8 +40,18 @@ const WorkRole = ({ data, index }: any) => {
           ))}
         </ul>
       </div>
-      <div>
+      <div className="flex flex-col gap-2">
         <Typography variant="p2">Supporting Documents</Typography>
+        {data.documents.map((doc: any) => (
+          <a
+            href={doc.url}
+            target="_blank"
+            rel="noreferrer"
+            className="border-800 border-l-4 pl-2"
+          >
+            <Button isText label={doc.name}></Button>
+          </a>
+        ))}
       </div>
     </div>
   );

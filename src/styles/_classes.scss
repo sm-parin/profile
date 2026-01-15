@@ -121,6 +121,10 @@
 a:not(.active) .nav-indicator {
   width: 2rem; /* w-8 */
   background-color: rgb(226 232 240 / 0.5);
+
+  @include mixins.tablet {
+    width: 1rem;
+  }
 }
 
 a:not(.active) .nav-text {
@@ -132,6 +136,10 @@ a:hover .nav-indicator,
 a:focus-visible .nav-indicator {
   width: 4rem;
   background-color: rgb(226 232 240 / 1);
+
+  @include mixins.tablet {
+    width: 2rem;
+  }
 }
 
 a:hover .nav-text,
@@ -143,6 +151,10 @@ a:focus-visible .nav-text {
 a.active .nav-indicator {
   width: 4rem;
   background-color: rgb(226 232 240 / 1);
+
+  @include mixins.tablet {
+    width: 2rem;
+  }
 }
 
 a.active .nav-text {

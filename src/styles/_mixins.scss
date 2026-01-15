@@ -1,6 +1,6 @@
 /* styles/mixins.scss */
 @mixin tablet {
-  @media (min-width: 48rem) {
+  @media (min-width: 48rem) and (max-width: 79.9375rem) {
     @content;
   }
 }

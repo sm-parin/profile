@@ -5,7 +5,7 @@ export const utec = {
   experience: "Professional",
   type: "Hybrid",
   description: "DESCRIPTION",
-  tags: ["Products, People"],
+  tags: ["Products", "People"],
   content: [
     {
       role: "Product Management Trainee",

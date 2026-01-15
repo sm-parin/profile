@@ -15,10 +15,15 @@ export const useScrollNavigation = (roles: string[] = []) => {
         behavior: "smooth",
       });
     } else {
-      sectionRefs.current[role]?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const el = sectionRefs.current[role];
+
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -40,7 +45,7 @@ export const useScrollNavigation = (roles: string[] = []) => {
         setActiveRole(role);
       },
       {
-        rootMargin: "-30% 0px -50% 0px",
+        rootMargin: "-10% 0px -30% 0px",
         threshold: [0.3, 0.6],
       }
     );

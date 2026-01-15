@@ -1,11 +1,9 @@
 export const goDutch = {
   company: "goDutch",
   duration: "Jul 2020 - Dec 2020",
-  location: "Remote",
   experience: "Internship",
   type: "Remote",
-      tags: ["Products", "People"],
-
+  tags: ["Products", "People"],
   description:
     "Contributed across partnerships, product initiatives, and program execution, working closely with teams, stakeholders, and student communities to scale engagement and adoption.",
   content: [
@@ -34,7 +32,6 @@ export const goDutch = {
     },
     {
       role: "Channel Lead",
-      tags: ["Products", "People"],
       responsibilities: [
         "Recruited and led a team of 12 Program Managers and 80+ Marketing Interns, ensuring successful program execution and achievement of growth targets.",
         "Organized webinars in collaboration with college councils, enabling knowledge-sharing, brand awareness, and student engagement.",
@@ -59,7 +56,6 @@ export const goDutch = {
     },
     {
       role: "Program Manager",
-      tags: ["Products", "People"],
       responsibilities: [
         "Recruited and led a team of 15 Marketing Interns, delivering successful campaigns that increased brand awareness and user engagement.",
         "Organized webinars with college councils, generating leads and strengthening visibility within student communities.",
