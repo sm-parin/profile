@@ -11,22 +11,36 @@ import Marquee from "react-fast-marquee";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import { response } from "../../../data/response";
 import { applyTheme } from "../../../utils/functions/theme";
+import { useNavigate } from "react-router-dom";
 
 const HomeHero = ({ data }: IHomeHeroProps) => {
+  const navigate = useNavigate();
+
   const sequence = useMemo(
     () => createTypeSequence(data?.title || ([] as string[])),
     [data?.title]
   );
 
-  const skills = ["React", "TypeScript", "CSS", "JavaScript", "Node.js"];
+  const skills = [
+    "Frontend Developement",
+    "Product Management",
+    "UI/UX Design",
+    "Community Management",
+    "",
+  ];
 
-  const theme = "light";
   const { bg, text, code } = applyTheme(true);
 
-
   return (
-    <PageContainer bgColor={`${bg}`} className="gap-y-4">
-      <div className={`${text}`}>
+    <PageContainer
+      bgColor={`${bg}`}
+      className="gap-y-4 
+        h-[90vh] tablet:h-[80vh] 
+        flex flex-col justify-between"
+    >
+      <div
+        className={`${text} flex flex-col gap-y-4 h-full justify-center tablet:mx-8 desktop:mx-20`}
+      >
         <TypeAnimation
           sequence={sequence}
           wrapper="h1"
@@ -35,18 +49,25 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
           repeat={Infinity}
           className="h1"
         />
-        <Typography variant="p2">{data.content}</Typography>
+        <Typography variant="p1" className="tablet:w-[90%] desktop:w-[80%]">
+          {data.content}
+        </Typography>
+        <div className="mt-8 flex gap-2 tablet:gap-4 desktop:gap-6">
+          <Button
+            label={data.primaryCta}
+            theme={false}
+            onClick={() => navigate("/about")}
+          />
+          <Button
+            className="col-span-6"
+            label={data.secondaryCta}
+            theme={true}
+            secondary
+          />
+        </div>
       </div>
-      <div>
-        <Button label={data.primaryCta} theme={false} />
-        <Button
-          className="col-span-6"
-          label={data.secondaryCta}
-          theme={true}
-          secondary
-        />
-      </div>
-      <div>
+
+      <div className="py-8">
         <Marquee
           autoFill
           gradient
@@ -55,7 +76,7 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
         >
           {skills.map((skill) => (
             // <div className="pl-8">{skill}</div>
-            <Typography variant="p3" className={`pl-8 ${text}`}>
+            <Typography variant="h6" className={`pl-8 ${text}`}>
               {skill}
             </Typography>
           ))}

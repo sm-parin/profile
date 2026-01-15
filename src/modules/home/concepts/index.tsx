@@ -11,8 +11,8 @@ const HomeConcepts = ({ data }: IHomeConceptsProps) => {
   const { bg, text } = applyTheme();
 
   return (
-    <PageContainer bgColor={bg}>
-      <div className="flex flex-col justify-between">
+    <PageContainer bgColor={`${bg} pt-20 pb-10 flex flex-col`}>
+      <div className="flex flex-col justify-between gap-y-4">
         <Typography variant="h3" className={`${text}`}>
           {data.title}
         </Typography>
@@ -20,7 +20,7 @@ const HomeConcepts = ({ data }: IHomeConceptsProps) => {
           {data.description}
         </Typography>
       </div>
-      <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 mt-12 tablet:grid-cols-2 desktop:grid-cols-4 gap-8">
         {data.content.map((concept: any, index: number) => (
           <ProjectTile
             index={index}

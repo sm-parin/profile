@@ -1,7 +1,7 @@
 import { LOREM_IPSUM } from "../../utils/constants/variables";
 
 export const concepts = {
-  title: "What my Pursuit looks like",
+  title: "The Pursuit of Happyness",
   description:
     "My pursuit is about building products with care — where every decision, every line of code, and every visual detail serves a real person. I enjoy the craft of turning ideas into reliable, pixel-perfect experiences, while staying grounded in the people who use them. That balance between precision and empathy is what I keep chasing.",
   cta: "View All Projects",
