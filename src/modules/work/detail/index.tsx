@@ -105,7 +105,12 @@ const WorkDetailPage = ({ response }: any) => {
   }
   const roles: string[] = data?.content?.map((item: any) => item.role) ?? [];
 
-  const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(roles);
+  const threshold = {
+    rootMargin: "-10% 0px -30% 0px",
+    threshold: [0.3, 0.6],
+  };
+
+  const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(roles, threshold);
 
   return (
     <SectionalLayout

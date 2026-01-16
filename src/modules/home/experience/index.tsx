@@ -14,32 +14,35 @@ const HomeExperience = ({ data }: IHomeExperienceProps) => {
   const description = data.description.split("\n");
 
   return (
-    <PageContainer bgColor={bg} className="flex flex-col compContainer gap-y-4">
+    <PageContainer bgColor={bg} className="flex flex-col compContainer gap-y-6">
       <Typography className={text} variant="h3">
         {data.title}
       </Typography>
-      {/* <Typography className={`${text} whitespace-pre-line leading-relaxed`} variant="p3">
-        {data.description}
-      </Typography> */}
-      <div className="flex flex-col gap-2">
+      <Typography
+        className={`${text} whitespace-pre-line leading-relaxed`}
+        variant="p2"
+      >
+        {data.summary}
+      </Typography>
+      <Button
+        isText
+        label={data.secondaryCta}
+        onClick={() => navigate("/about#contact")}
+        className="italic"
+      />
+      <div className="flex flex-col gap-4 border-l-6 border-800">
         {description.map((line: string, index: number) => (
-          <Typography
-            className={`${text} ${index === 0 ? "mb-6" : ""}`}
-            variant={index === 0 ? "p2" : "p3"}
-          >
+          <Typography className={`${text} pl-3`} variant="p3">
             {line}
           </Typography>
         ))}
       </div>
 
-      <div className="mt-8 flex items-center gap-2 tablet:gap-4 desktop:gap-6">
-        <Button label={data.primaryCta} onClick={() => navigate("/work")} />
-        <Button
-          isText
-          label={data.secondaryCta}
-          onClick={() => navigate("/about#contact")}
-        />
-      </div>
+      <Button
+        label={data.primaryCta}
+        onClick={() => navigate("/work")}
+        className="mt-3"
+      />
     </PageContainer>
   );
 };

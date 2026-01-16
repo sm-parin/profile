@@ -3,6 +3,7 @@ import Typography from "../../../../components/library/typography";
 import { applyTheme } from "../../../../utils/functions/theme";
 import useMediaQuery from "../../../../hooks/useMediaQuery";
 import Button from "../../../../components/library/button";
+import Link from "../../../../components/library/link";
 
 const WorkRole = ({ data, index, key, ref, dataRole }: any) => {
   const { text } = applyTheme();
@@ -43,14 +44,7 @@ const WorkRole = ({ data, index, key, ref, dataRole }: any) => {
       <div className="flex flex-col gap-2">
         <Typography variant="p2">Supporting Documents</Typography>
         {data.documents.map((doc: any) => (
-          <a
-            href={doc.url}
-            target="_blank"
-            rel="noreferrer"
-            className="border-800 border-l-4 pl-2"
-          >
-            <Button isText label={doc.name}></Button>
-          </a>
+          <Link link={doc} />
         ))}
       </div>
     </div>

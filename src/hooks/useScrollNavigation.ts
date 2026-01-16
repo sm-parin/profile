@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useScrollNavigation = (roles: string[] = []) => {
+export const useScrollNavigation = (roles: string[] = [], threshold: any) => {
   const [activeRole, setActiveRole] = useState<string>("");
 
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -31,24 +31,18 @@ export const useScrollNavigation = (roles: string[] = []) => {
   useEffect(() => {
     if (!roles.length) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        if (!visible) return;
+      if (!visible) return;
 
-        const role = visible.target.getAttribute("data-role");
-        if (!role) return;
+      const role = visible.target.getAttribute("data-role");
+      if (!role) return;
 
-        setActiveRole(role);
-      },
-      {
-        rootMargin: "-10% 0px -30% 0px",
-        threshold: [0.3, 0.6],
-      }
-    );
+      setActiveRole(role);
+    }, threshold);
 
     roles.forEach((role) => {
       const el = sectionRefs.current[role];

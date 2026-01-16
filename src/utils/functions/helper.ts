@@ -74,3 +74,7 @@ export const unhash = (hash: string) => {
 
   return hash.replace(/^#/, "").replaceAll("_", " ");
 };
+
+export const getHashFromUrl = () => {
+  return window.location.hash.replace("#", "");
+};
