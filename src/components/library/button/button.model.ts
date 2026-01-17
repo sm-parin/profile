@@ -3,7 +3,7 @@ export interface IButtonProps {
   secondary?: boolean;
   isText?: boolean;
   label?: string;
-  icon?: string;
+  icon?: React.ReactNode;
   onClick?: () => void;
   className?: string;
   iconPosition?: "start" | "end";

@@ -3,6 +3,8 @@ import { IButtonProps } from "./button.model";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import Typography from "../typography";
 import { applyTheme } from "../../../utils/functions/theme";
+import Icon from "../icon";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const BUTTON_CLASSES = {
   mobile: {
@@ -33,7 +35,10 @@ const Button = ({
   className = "",
 }: IButtonProps) => {
   const { isMobileOnly } = useMediaQuery();
-  const { bg, text, border } = applyTheme(theme !== null ? theme : isText ? false : !secondary, "light");
+  const { bg, text, border } = applyTheme(
+    theme !== null ? theme : isText ? false : !secondary,
+    "light"
+  );
 
   useEffect(() => {});
   return (
@@ -61,7 +66,8 @@ const Button = ({
         {label}
       </Typography>
 
-      <ArrowIcon
+      <Icon
+        icon={icon || <MdArrowForwardIos color="var(--color-200)" />}
         className={`
             opacity-70
             transition-all duration-200 ease-out
@@ -75,10 +81,3 @@ const Button = ({
 };
 
 export default Button;
-
-/**
- * Replace this with your actual icon component
- */
-const ArrowIcon = ({ className = "" }: { className?: string }) => (
-  <span className={className}>{">"}</span>
-);
