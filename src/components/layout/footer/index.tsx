@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <PageContainer
       bgColor={bg}
-      className="flex justify-between items-center pt-8 pb-4"
+      className="flex justify-between items-center flex-col tablet:flex-row gap-4 pt-8 pb-4"
     >
       <div className="flex gap-2">
         <Icon icon={<FaProjectDiagram />} />

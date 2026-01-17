@@ -35,7 +35,7 @@ const Button = ({
   className = "",
 }: IButtonProps) => {
   const { isMobileOnly } = useMediaQuery();
-  const { bg, text, border } = applyTheme(
+  const { bg, text, border, token } = applyTheme(
     theme !== null ? theme : isText ? false : !secondary,
     "light"
   );
@@ -55,25 +55,23 @@ const Button = ({
           ${isText ? "bg-transparent" : bg}
           ${isText ? "" : `border ${border}`}
           ${className}
+          ${text}
         `}
       onClick={onClick}
     >
-      <Typography
-        variant={isMobileOnly ? "p4" : "p3"}
-        markup="span"
-        className={text}
-      >
+      <Typography variant={isMobileOnly ? "p4" : "p3"} markup="span">
         {label}
       </Typography>
 
       <Icon
-        icon={icon || <MdArrowForwardIos color="var(--color-200)" />}
+        icon={icon || <MdArrowForwardIos />}
+        color={token[1]}
+        boxClass={text}
         className={`
             opacity-70
             transition-all duration-200 ease-out
             group-hover:-translate-x-1
             group-hover:opacity-100
-            ${text}
           `}
       />
     </button>

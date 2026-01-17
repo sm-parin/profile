@@ -3,12 +3,24 @@ import { NavLink, useLocation } from "react-router-dom";
 import PageContainer from "../page-container";
 import { applyTheme } from "../../../utils/functions/theme";
 import Typography from "../../library/typography";
+import useMediaQuery from "../../../hooks/useMediaQuery";
+import { FaHome } from "react-icons/fa";
+import { RiAccountPinCircleFill } from "react-icons/ri";
+import { MdWorkHistory } from "react-icons/md";
+
 
 const Header = ({ data }: any) => {
   const { bg, text, border } = applyTheme(true);
   const location = useLocation();
 
   const currentPath = location.pathname.split("/")[1];
+
+  const { isMobileOnly } = useMediaQuery();
+  const ICONS: any = {
+    home: <FaHome />,
+    about: <RiAccountPinCircleFill />,
+    work: <MdWorkHistory />,
+  }
 
   return (
     <PageContainer
@@ -36,9 +48,9 @@ const Header = ({ data }: any) => {
             >
               <Typography
                 variant="p1"
-                className={`${isActive ? "border-b" : ""} ${border} group-hover:border-b`}
+                className={`${isActive ? "border-b" : ""} ${border} group-hover:border-b ${isMobileOnly ? "py-0.5" : ""}`}
               >
-                <NavLink to={path}>{route}</NavLink>
+                <NavLink to={path}>{isMobileOnly ? ICONS[route] : route}</NavLink>
               </Typography>
             </li>
           );

@@ -6,6 +6,7 @@ type ThemeResult = {
   color: string;
   border: string;
   code: number[];
+  token: string[];
 };
 
 /**
@@ -26,6 +27,7 @@ const THEME_MAP: Record<
       color: "color-800",
       border: "border-800",
       code: [25, 800],
+      token: ["var(--color-25)", "var(--color-800)"],
     },
     inverted: {
       bg: "bg-800",
@@ -33,6 +35,7 @@ const THEME_MAP: Record<
       color: "color-25",
       border: "border-800",
       code: [800, 25],
+      token: ["var(--color-800)", "var(--color-25)"],
     },
   },
 
@@ -43,6 +46,7 @@ const THEME_MAP: Record<
       color: "color-800",
       border: "border-200",
       code: [200, 800],
+      token: ["var(--color-200)", "var(--color-800)"],
     },
     inverted: {
       bg: "bg-800",
@@ -50,6 +54,7 @@ const THEME_MAP: Record<
       color: "color-200",
       border: "border-200",
       code: [800, 200],
+      token: ["var(--color-800)", "var(--color-200)"],
     },
   },
 
@@ -60,6 +65,7 @@ const THEME_MAP: Record<
       color: "color-100",
       border: "border-100",
       code: [900, 100],
+      token: ["var(--color-900)", "var(--color-100)"],
     },
     inverted: {
       bg: "bg-100",
@@ -67,13 +73,14 @@ const THEME_MAP: Record<
       color: "color-900",
       border: "border-100",
       code: [100, 900],
+      token: ["var(--color-100)", "var(--color-900)"],
     },
   },
 };
 
 export const applyTheme = (
   invert = false,
-  theme: TTheme = "light",
+  theme: TTheme = "light"
 ): ThemeResult => {
   return invert ? THEME_MAP[theme].inverted : THEME_MAP[theme].normal;
 };

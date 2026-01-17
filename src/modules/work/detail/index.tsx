@@ -7,7 +7,14 @@ import NavigationChip from "../../../components/navigation-chip";
 import { useScrollNavigation } from "../../../hooks/useScrollNavigation";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import SectionalLayout from "../../../components/layout/sectional-layout";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { GiNewBorn } from "react-icons/gi";
+import { MdVolunteerActivism } from "react-icons/md";
+import { VscRemote } from "react-icons/vsc";
+import { PiBuildingOfficeFill } from "react-icons/pi";
+import { RiHome9Fill } from "react-icons/ri";
+import Icon from "../../../components/library/icon";
 
 const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
   const { bg: bgI, text: textI } = applyTheme(true);
@@ -15,19 +22,30 @@ const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
 
   const { isTablet } = useMediaQuery();
 
+  const ICONS: any = {
+    Professional: <BsPersonWorkspace />,
+    Internship: <GiNewBorn />,
+    Volunteer: <MdVolunteerActivism />,
+    Remote: <RiHome9Fill />,
+    "On-Site": <PiBuildingOfficeFill />,
+    "Hybrid": <VscRemote /> ,
+  }
+
   return (
     <div className={`${bgI} relative`}>
       <div className={`${textI} sticky top-0 flex flex-col gap-4 tablet:gap-8`}>
         <div className="flex flex-col gap-2">
           <Typography variant="h3">{data.company}</Typography>
-          <div className="flex gap-2 flex-wrap">
-            <div className={`${bgI} ${textI} px-1 border-200 border-l`}>
-              <Typography variant="p3" className="pl-2 border-200 border-l">
+          <div className="flex gap-8 flex-wrap">
+            <div className={`${bgI} ${textI} flex gap-2 items-center`}>
+              <Icon icon={ICONS[data.experience]} color={"var(--2oo)"} />
+              <Typography variant="p3" className="">
                 {data.experience}
               </Typography>
             </div>
-            <div className={`${bgI} ${textI} px-1 border-200 border-l`}>
-              <Typography variant="p3" className="pl-2 border-200 border-l">
+            <div className={`${bgI} ${textI} flex gap-2 items-center`}>
+              <Icon icon={ICONS[data.type]} color={"var(--2oo)"} />
+              <Typography variant="p3" className="">
                 {data.type}
               </Typography>
             </div>
@@ -36,9 +54,9 @@ const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
 
         {/* <div className="flex flex-col gap-4 tablet:gap-2"> */}
         <div className="flex flex-row justify-between items-center tablet:flex-col tablet:justify-start tablet:items-start italic">
-          <Typography variant="p3">{data.duration}</Typography>
+          <Typography variant="p4">{data.duration}</Typography>
           {data.location && (
-            <Typography variant="p3">{data.location}</Typography>
+            <Typography variant="p4">{data.location}</Typography>
           )}
         </div>
         {/* </div> */}
