@@ -4,8 +4,8 @@ import PageContainer from "../page-container";
 import { applyTheme } from "../../../utils/functions/theme";
 
 const SectionalLayout = ({ leftSection, rightSection }: any) => {
-  const { isTablet, isTabletOnly } = useMediaQuery();
-  const { bg, text } = applyTheme();
+  const { isTablet, isTabletOnly, isDesktop } = useMediaQuery();
+  const { bg, text, border } = applyTheme();
   const { bg: bgI, text: textI } = applyTheme(true);
 
   return isTablet ? (
@@ -13,10 +13,12 @@ const SectionalLayout = ({ leftSection, rightSection }: any) => {
       className={`grid grid-cols-12 displayContainer`}
       bgColor={isTabletOnly ? "wdp-pc-bg" : `${bg}`}
     >
-      <div
-        className={`${bgI} col-span-12 tablet:col-span-4 compContainer p-4 tablet:pr-4 desktop:p-6 desktop:pr-6 relative`}
-      >
-        <div className={`${textI} sticky top-20`}>{leftSection}</div>
+      <div className={`${bgI} col-span-12 tablet:col-span-4  pl-2`}>
+        <div
+          className={`relative compContainer p-4 tablet:pr-4 desktop:p-6 desktop:pr-6 ${isDesktop ? `border-l-4 h-full ${border}` : ""}`}
+        >
+          <div className={`${textI} sticky top-20`}>{leftSection}</div>
+        </div>
       </div>
       <div
         className={`${bg} ${text} col-span-12 tablet:col-span-8 tablet:ml-8`}

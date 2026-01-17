@@ -8,7 +8,7 @@ export const concepts = {
   content: [
     {
       title: "Products",
-      proficiency: 70,
+      proficiency: 50,
       description:
         "I enjoy shaping products by asking the right questions early and understanding what truly needs to be built. I’m comfortable working through ambiguity, aligning intent with outcomes, and making decisions that balance user needs with business goals.",
     },

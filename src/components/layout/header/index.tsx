@@ -6,11 +6,12 @@ import Typography from "../../library/typography";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import { FaHome } from "react-icons/fa";
 import { RiAccountPinCircleFill } from "react-icons/ri";
-import { MdWorkHistory } from "react-icons/md";
+import { MdWorkHistory, MdAccountBox } from "react-icons/md";
+import Icon from "../../library/icon";
 
 
 const Header = ({ data }: any) => {
-  const { bg, text, border } = applyTheme(true);
+  const { bg, text, border, token } = applyTheme(true);
   const location = useLocation();
 
   const currentPath = location.pathname.split("/")[1];
@@ -18,7 +19,7 @@ const Header = ({ data }: any) => {
   const { isMobileOnly } = useMediaQuery();
   const ICONS: any = {
     home: <FaHome />,
-    about: <RiAccountPinCircleFill />,
+    about: <MdAccountBox />,
     work: <MdWorkHistory />,
   }
 
@@ -47,10 +48,10 @@ const Header = ({ data }: any) => {
                 `}
             >
               <Typography
-                variant="p1"
+                variant="p2"
                 className={`${isActive ? "border-b" : ""} ${border} group-hover:border-b ${isMobileOnly ? "py-0.5" : ""}`}
               >
-                <NavLink to={path}>{isMobileOnly ? ICONS[route] : route}</NavLink>
+                <NavLink to={path}>{isMobileOnly ? <Icon icon={ICONS[route]} color={token} size="1.5rem" /> : route.toUpperCase()}</NavLink>
               </Typography>
             </li>
           );

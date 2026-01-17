@@ -28,15 +28,15 @@ const WdpLeftSection = ({ data, roles, activeRole, scrollToRole }: any) => {
     Volunteer: <MdVolunteerActivism />,
     Remote: <RiHome9Fill />,
     "On-Site": <PiBuildingOfficeFill />,
-    "Hybrid": <VscRemote /> ,
-  }
+    Hybrid: <VscRemote />,
+  };
 
   return (
     <div className={`${bgI} relative`}>
       <div className={`${textI} sticky top-0 flex flex-col gap-4 tablet:gap-8`}>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
           <Typography variant="h3">{data.company}</Typography>
-          <div className="flex gap-8 flex-wrap">
+          <div className="flex gap-8 tablet:flex-col tablet:gap-2 desktop:gap-8 desktop:flex-row">
             <div className={`${bgI} ${textI} flex gap-2 items-center`}>
               <Icon icon={ICONS[data.experience]} color={"var(--2oo)"} />
               <Typography variant="p3" className="">
@@ -128,7 +128,10 @@ const WorkDetailPage = ({ response }: any) => {
     threshold: [0.3, 0.6],
   };
 
-  const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(roles, threshold);
+  const { activeRole, scrollToRole, sectionRefs } = useScrollNavigation(
+    roles,
+    threshold
+  );
 
   return (
     <SectionalLayout

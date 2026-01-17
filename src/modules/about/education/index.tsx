@@ -12,16 +12,16 @@ const AboutEducation = ({ data, ref, dataRole }: any) => {
       </Typography>
       <div className="flex flex-col">
         {data.map((row: any) => (
-          <div className="grid grid-cols-5 tablet:grid-cols-9 desktop:grid-cols-12 gap-4 border-b py-4">
-            <Typography variant="p3" className="col-span-1">
+          <div className="grid grid-cols-8 tablet:grid-cols-10 desktop:grid-cols-12 gap-4 border-b py-4">
+            <Typography variant="p3" className="col-span-2">
               {row.type}
             </Typography>
-            {isDesktop && (
+            {/* {isDesktop && (
               <Typography variant="p3" className="col-span-3">
                 {row.stream}
               </Typography>
-            )}
-            <Typography variant="p3" className="col-span-4">
+            )} */}
+            <Typography variant="p3" className="col-span-6">
               {row.institute}
             </Typography>
             {isTablet && (
@@ -29,7 +29,7 @@ const AboutEducation = ({ data, ref, dataRole }: any) => {
                 {row.year}
               </Typography>
             )}
-            {isTablet && (
+            {isDesktop && (
               <Typography variant="p3" className="col-span-2">
                 {row.grade}
               </Typography>

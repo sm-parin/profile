@@ -40,7 +40,6 @@ const Button = ({
     "light"
   );
 
-  useEffect(() => {});
   return (
     <button
       className={`
