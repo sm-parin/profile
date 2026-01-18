@@ -35,9 +35,19 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
   const cardNumber = isActive && isDesktop ? positionMap[index + 1] : "";
 
   const roles: string[] = data?.content?.map((item: any) => item.role);
-  const skills: string[] = data?.content?.map((item: any) => item.skills);
 
-  const { bg, text } = applyTheme(theme?.[1], theme?.[0]);
+  const { bg, text, border } = applyTheme(theme?.[1], theme?.[0]);
+  const {
+    bg: bgI,
+    text: textI,
+    border: borderI,
+  } = applyTheme(!theme?.[1], theme?.[0]);
+
+  const CHIP_BORDERS: any = {
+    Professional: "border-800",
+    Internship: "border-200",
+    Volunteer: "border-25",
+  };
 
   return (
     <div
@@ -49,12 +59,12 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
       onClick={() => navigate(`/work/${route}`)}
     >
       <div
-        className={`${text} flex flex-col desktop:gap-8 justify-between h-full ${data.experience === "Professional" ? "border-200" : "border-800"} border p-4`}
+        className={`${text} ${bg} flex flex-col gap-4 desktop:gap-8 justify-between h-full ${data.experience === "Professional" ? "border-200" : "border-800"} border p-4`}
       >
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
             <Typography variant="h6">{data.company}</Typography>
-            <div className="flex gap-1">
+            <div className="flex gap-1 italic">
               <Typography markup="span" variant="p3">
                 {"0" + data.priority + "."}
               </Typography>
@@ -67,18 +77,20 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
             )}
           </div>
 
-          {isActive && isTablet && (
+          {/* {isActive && isTablet && (
             <div className="flex flex-col justify-end items-end gap-1">
               <Typography variant="p3">{data.tags.join(", ")}</Typography>
               <Typography variant="p4" className="italic">
                 {data.duration}
               </Typography>
             </div>
-          )}
+          )} */}
         </div>
+
         {((isDesktop && !isActive) || !isDesktop) && (
           <RoleListInWorkCard roles={roles} />
         )}
+
         {isActive && isDesktop && (
           <div
             className={`${isActive ? "h-full flex flex-col justify-between" : ""}`}
@@ -86,9 +98,24 @@ const WorkCard = ({ data, isActive, index, route, theme }: any) => {
             <Typography variant="p3" className={isActive ? "" : "line-clamp-2"}>
               {data.description}
             </Typography>
-            <Typography variant="p2" className={isActive ? "" : "line-clamp-2"}>
-              {skills.join(", ")}
-            </Typography>
+            {/* <Typography variant="p2" className={isActive ? "" : "line-clamp-2"}>
+              {data.skills.join(", ")}
+            </Typography> */}
+          </div>
+        )}
+
+        {isDesktop && isActive && (
+          <div className="flex gap-2 flex-wrap">
+            {data.tags.map((tag: string, idx: number) => (
+              <div className={`${bgI} ${textI} p-1`} key={idx}>
+                <Typography
+                  variant="p3"
+                  className={`px-2 ${CHIP_BORDERS[data.experience]} border-l-4`}
+                >
+                  {tag}
+                </Typography>
+              </div>
+            ))}
           </div>
         )}
       </div>

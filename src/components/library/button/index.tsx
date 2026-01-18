@@ -67,7 +67,7 @@ const Button = ({
         color={token[1]}
         boxClass={text}
         className={`
-            opacity-70
+            opacity-90
             transition-all duration-200 ease-out
             group-hover:-translate-x-1
             group-hover:opacity-100

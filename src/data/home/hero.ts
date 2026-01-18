@@ -3,7 +3,13 @@ import { LOREM_IPSUM } from "../../utils/constants/variables";
 export const hero = {
   title: ["Parin SM", "Products", "Pixels", "Programs", "People"],
   content:
-    "I work at the intersection of product strategy and frontend development, where business intent meets user experience. I enjoy shaping ideas, asking the right questions early, and building interfaces that are both technically sound and thoughtfully designed.",
+    "I currently work as a Frontend Developer, backed with product and community management driven roles, which shaped how I think about users, priorities, and long-term impact. I aim to program pixel-perfect products, for people.",
   primaryCta: "ABOUT",
   secondaryCta: "RESUME",
+  skills: [
+    "Frontend Development",
+    "Product Thinking",
+    "UI/UX/VD",
+    "Community & Stakeholder Engagement",
+  ],
 };

@@ -5,7 +5,7 @@ import useMediaQuery from "../../../../hooks/useMediaQuery";
 import Button from "../../../../components/library/button";
 import Link from "../../../../components/library/link";
 
-const WorkRole = ({ data, index, key, ref, dataRole }: any) => {
+const WorkRole = ({ data, index, key, ref, dataRole, className }: any) => {
   const { text } = applyTheme();
   const { isTablet } = useMediaQuery();
   const { bg: bgI, text: textI } = applyTheme(true);
@@ -15,7 +15,7 @@ const WorkRole = ({ data, index, key, ref, dataRole }: any) => {
   return (
     <div
       key={key}
-      className={`flex flex-col border-b gap-6 ${text} ${!isTablet && index === 0 ? "py-10" : "compContainer"}`}
+      className={`flex flex-col gap-6 ${text} ${!isTablet && index === 0 ? "py-10" : "compContainer"} ${className}`}
     >
       <Typography variant="h3" ref={ref} data-role={dataRole}>
         {data.role}

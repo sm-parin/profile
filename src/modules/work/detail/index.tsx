@@ -104,6 +104,7 @@ const WdpRightSection = ({ data, sectionRefs }: any) => {
               sectionRefs.current[roleData.role] = el;
             }}
             dataRole={roleData.role}
+            className={index !== data.content.length - 1 ? "border-b" : ""}
           />
         ))}
     </div>

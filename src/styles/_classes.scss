@@ -167,42 +167,42 @@ a.active .nav-text {
 }
 
 .displayContainer {
-  min-height: calc(100vh - 96px);
+  min-height: calc(100vh - 48px);
 
   @include mixins.tablet {
-    min-height: calc(100vh - 108px);
+    min-height: calc(100vh - 60px);
   }
 
   @include mixins.desktop {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 72px);
   }
 }
 
 .workContainer {
-  min-height: calc(100vh - 96px);
+  min-height: calc(100vh - 48px);
 
   @include mixins.tablet {
-    min-height: calc(100vh - 108px);
-    max-height: calc(100vh - 108px);
+    min-height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px);
   }
 
   @include mixins.desktop {
-    min-height: calc(100vh - 120px);
-    max-height: calc(100vh - 120px);
+    min-height: calc(100vh - 72px);
+    max-height: calc(100vh - 72px);
   }
 }
 
 .compContainer {
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 
   @include mixins.tablet {
     padding-top: 60px;
-    padding-bottom: 30px;
+    padding-bottom: 45px;
   }
 
   @include mixins.desktop {
     padding-top: 80px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
   }
 }

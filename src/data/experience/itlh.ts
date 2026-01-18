@@ -1,5 +1,5 @@
 export const itlh = {
-  company: "Information Technology Learning Hub - ITLH",
+  company: "ITLH",
   duration: "Sept 2023 - Oct 2023",
   location: "Mumbai, Maharashtra, India",
   experience: "Internship",

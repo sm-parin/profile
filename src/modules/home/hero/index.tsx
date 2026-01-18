@@ -12,6 +12,7 @@ import useMediaQuery from "../../../hooks/useMediaQuery";
 import { response } from "../../../data/response";
 import { applyTheme } from "../../../utils/functions/theme";
 import { useNavigate } from "react-router-dom";
+import Paragraph from "../../../components/library/paragraph";
 
 const HomeHero = ({ data }: IHomeHeroProps) => {
   const navigate = useNavigate();
@@ -20,14 +21,6 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
     () => createTypeSequence(data?.title || ([] as string[])),
     [data?.title]
   );
-
-  const skills = [
-    "Frontend Developement",
-    "Product Management",
-    "UI/UX Design",
-    "Community Management",
-    "",
-  ];
 
   const { bg, text, code } = applyTheme(true);
 
@@ -74,7 +67,7 @@ const HomeHero = ({ data }: IHomeHeroProps) => {
           gradientColor={`var(--color-${code[0]})`}
           gradientWidth={100}
         >
-          {skills.map((skill) => (
+          {data.skills.map((skill: string) => (
             // <div className="pl-8">{skill}</div>
             <Typography variant="h6" className={`pl-8 ${text}`}>
               {skill}

@@ -10,25 +10,25 @@ export const concepts = {
       title: "Products",
       proficiency: 50,
       description:
-        "I enjoy shaping products by asking the right questions early and understanding what truly needs to be built. I’m comfortable working through ambiguity, aligning intent with outcomes, and making decisions that balance user needs with business goals.",
+        "Framing problems early, navigating ambiguity, and aligning user needs with business outcomes.",
     },
     {
       title: "Programs",
       proficiency: 50,
       description:
-        "I’m actively building my technical depth by working on real frontend systems and learning how ideas turn into scalable code. Each project helps me think more structurally about implementation, performance, and long-term maintainability.",
+        "Turning ideas into scalable systems with a focus on structure, performance, and longevity.",
     },
     {
       title: "Pixels",
       proficiency: 30,
       description:
-        "I’m just starting out with visual craft, learning how spacing, hierarchy, and consistency shape how products feel. I’m developing an eye for detail and a respect for design — knowing that great products are as much about how they look and feel as how they work.",
+        "Developing visual craft through spacing, hierarchy, and consistency that shape product feel.",
     },
     {
       title: "People",
       proficiency: 70,
       description:
-        "I work best when I’m close to people — users, teammates, and stakeholders. I care about listening, understanding perspectives, and translating feedback into thoughtful action. Building with people in mind is what grounds my work.",
+        "Working closely with users and teams, translating feedback into clear, actionable decisions.",
     },
   ],
 };
