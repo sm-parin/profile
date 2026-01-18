@@ -113,9 +113,6 @@
   --breakpoint-content: 105rem;
 }
 
-@custom-media --tablet (min-width: var(--breakpoint-tablet));
-@custom-media --desktop (min-width: var(--breakpoint-desktop));
-
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Variable.woff2") format("woff2");
