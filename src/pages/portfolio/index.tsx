@@ -32,9 +32,7 @@ export const Portfolio = () => {
     },
   ];
 
-  const router = createBrowserRouter(siteMap, {
-    basename: `${isLocalhost() ? "/" : "/profile"}`,
-  });
+  const router = createBrowserRouter(siteMap);
 
   return <RouterProvider router={router} />;
 };
