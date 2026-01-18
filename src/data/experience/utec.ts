@@ -1,10 +1,11 @@
 export const utec = {
   company: "Utec by UltraTech",
-  duration: "May 2023 - Aug 2023",
-  location: "Hyderabad, India",
+  duration: "Jan 2023 - Apr 2023",
+  location: "Mumbai, Maharashtra",
   experience: "Professional",
-  type: "Hybrid",
-  description: "DESCRIPTION",
+  type: "On-Site",
+  description:
+    "Led end-to-end ideation, pilot execution, and process design across multiple service and marketplace initiatives, combining stakeholder coordination, funnel analysis, and SOP development to improve operational efficiency, transparency, and customer experience. Delivered data-driven insights through Excel-based analysis, partner evaluation, and product teardowns, enabling informed decision-making across housing, financial services, and digital platforms.",
   tags: ["Products", "People"],
   content: [
     {
@@ -20,17 +21,16 @@ export const utec = {
         "Analyzed channel partner performance for referrals using Excel and referral metadata to obtain actionable insights.",
       ],
       skills: [
+        "Microsoft Excel",
+        "Partnerships",
+        "Product Operations",
         "Product Management",
-        "Market Research",
-        "Data Analysis",
-        "Process Improvement",
-        "Stakeholder Coordination",
       ],
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Appreciation",
+          url: "https://drive.google.com/file/d/10Ki2Utx7R31vQBSIkYvFI9ehngVyerbO/view?usp=drive_link",
         },
       ],
     },

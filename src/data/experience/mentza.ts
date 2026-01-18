@@ -4,8 +4,9 @@ export const mentza = {
   location: "Remote",
   experience: "Internship",
   type: "Remote",
-  description: "DESCRIPTION",
-  tags: ["Products", "People"],
+  description:
+    "Supported community growth and engagement by administering live sessions, fostering meaningful connections, and contributing to onboarding and internal documentation. Strengthened content and communication capabilities by collaborating with 200+ speakers, pitching community features, and ideating events to drive participation and member retention.",
+  tags: ["People", "Products"],
   content: [
     {
       role: "Community Executive",
@@ -20,8 +21,12 @@ export const mentza = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Appreciation",
+          url: "https://drive.google.com/file/d/1Qp1EUAf99hidYuDCFSfempCYXsQ8Ejvc/view?usp=drive_link",
+        },
+        {
+          name: "Offer Letter",
+          url: "https://drive.google.com/file/d/1CoDNSkn3N5FsDCijXu5vlSB3caGF4lNh/view?usp=drive_link",
         },
       ],
     },

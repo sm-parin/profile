@@ -1,11 +1,12 @@
 export const makermela = {
-  company: "Maker Mela by RiiDL",
+  company: "Maker Mela",
   duration: "Jul 2019 - Jun 2021",
   location: "Mumbai, Maharashtra, India",
   experience: "Volunteer",
   type: "Hybrid",
-  description: "DESCRIPTION",
-  tags: ["Products", "People"],
+  description:
+    "Led large-scale event partnerships and execution by coordinating with 16 E-Cells, securing 24 partners (including 8 global), and managing PR, logistics, and hospitality for flagship events. Drove high-impact outcomes by leading a 10-member volunteer team, onboarding investors and global stakeholders, and securing a marquee keynote speaker, strengthening event credibility, reach, and participant experience.",
+  tags: ["People"],
   content: [
     {
       role: "Vice Chairperson of Partnerships",
@@ -27,8 +28,16 @@ export const makermela = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Recommendation",
+          url: "https://drive.google.com/file/d/1MtWoJA2scNVw8CIycLMlJve5Vr5QuWWp/view?usp=drive_link",
+        },
+        {
+          name: "Letter of Appreciation",
+          url: "https://drive.google.com/file/d/13jgoQUxf5QiHP3xWAlSUk6zOpSce1DgO/view?usp=drive_link",
+        },
+        {
+          name: "Offer Letter",
+          url: "https://drive.google.com/file/d/1nu-1Qn9hBowN9DA3guh-udsh4WPpegzB/view?usp=drive_link",
         },
       ],
     },
@@ -50,8 +59,12 @@ export const makermela = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Appreciation",
+          url: "https://drive.google.com/file/d/1cCMo3z_B7WdJi-xV0iq9k3axaZ8N3_bm/view?usp=drive_link",
+        },
+        {
+          name: "Offer Letter",
+          url: "https://drive.google.com/file/d/1SVx9QPQ3qh5g2XP5UeBqzoZ6mdpqGi4t/view?usp=drive_link",
         },
       ],
     },

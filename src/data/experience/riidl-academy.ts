@@ -4,8 +4,9 @@ export const riidlAcademy = {
   location: "Remote",
   experience: "Internship",
   type: "Remote",
-  tags: ["Products", "People"],
-  description: "DESCRIPTION",
+  tags: ["People"],
+  description:
+    "Drove student acquisition and course visibility by promoting offerings to 2,000+ students through social media, executing targeted outreach strategies to increase reach and admissions, and actively engaging audiences to support high-performing digital campaigns.",
   content: [
     {
       role: "Community Content Manager",
@@ -24,8 +25,12 @@ export const riidlAcademy = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Appreciation",
+          url: "https://drive.google.com/file/d/1KZWJdNalxqbhiOsFR4_EDzLKZZzeb3B8/view?usp=drive_link",
+        },
+        {
+          name: "Offer Letter",
+          url: "https://drive.google.com/file/d/1HPhtFh8b-2J1Oib1CAkjDEi1HNgauati/view?usp=drive_link",
         },
       ],
     },

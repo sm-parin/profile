@@ -25,8 +25,16 @@ export const goDutch = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Recommendation",
+          url: "https://drive.google.com/file/d/1saM8jCnQ5kcNH1EyvFoHlFYwnHdpltuN/view?usp=drive_link",
+        },
+        {
+          name: "Internship Certificate",
+          url: "https://drive.google.com/file/d/19_wN6OU25gbHLYbrM7enR8tee2BqGuCg/view?usp=drive_link",
+        },
+        {
+          name: "Offer Letter",
+          url: "https://drive.google.com/file/d/1lDonM28hivBgX_VakjKY4guajoNvAxgB/view?usp=drive_link",
         },
       ],
     },

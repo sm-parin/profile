@@ -110,7 +110,7 @@ const AboutRightSection = ({ data, sectionRefs }: any) => {
         ref={(el: any) => (sectionRefs.current["contact"] = el)}
         dataRole="contact"
       >
-        <Button label="Say Hello!" />
+        <Button label="Say Hello!" className="mt-8" />
       </AboutBaseLayout>
     </div>
   );
@@ -122,7 +122,7 @@ const About = ({ data }: any) => {
   const location = useLocation();
 
   const threshold = {
-    rootMargin: "-10% 0px -54% 0px",
+    rootMargin: "-10% 0px -50% 0px",
     threshold: [0.3, 0.6],
   };
 

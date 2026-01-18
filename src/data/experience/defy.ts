@@ -5,7 +5,7 @@ export const defy = {
   experience: "Internship",
   type: "Remote",
   description: "DESCRIPTION",
-  tags: ["Products", "People"],
+  tags: ["People", "Products"],
   content: [
     {
       role: "Community Moderator Intern",
@@ -20,8 +20,8 @@ export const defy = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Offer Letter",
+          url: "https://drive.google.com/file/d/1JZOt-EJGedZ7t6PutzpWb0Lp5v_iP-iM/view?usp=drive_link",
         },
       ],
     },

@@ -1,11 +1,12 @@
 export const fbDevC = {
-  company: "Facebook Developer Circle: Mumbai",
+  company: "Meta Developer Circle: Mumbai",
   duration: "Jan 2020 - Jun 2022",
   location: "Remote",
   experience: "Volunteer",
   type: "Remote",
-  description: "DESCRIPTION",
-  tags: ["Products", "People"],
+  description:
+    "Supported end-to-end event execution by managing delegate relations, partnerships with technical councils, and on-ground coordination, while producing insight-driven event reports to guide future planning. Enhanced event visibility and engagement through impactful social media content creation.",
+  tags: ["People", "Programs"],
   content: [
     {
       role: "Community Content Manager",
@@ -24,8 +25,8 @@ export const fbDevC = {
       tools: ["Microsoft Excel", "Figma", "Miro", "Google Workspace"],
       documents: [
         {
-          name: "Utec Internship Certificate",
-          url: "https://www.google.com",
+          name: "Letter of Appreciation",
+          url: "https://drive.google.com/file/d/1_0uncybLm5VmHWE467i5gROedthXQJsp/view?usp=drive_link",
         },
       ],
     },

@@ -1,9 +1,9 @@
 export const itlh = {
   company: "ITLH",
   duration: "Sept 2023 - Oct 2023",
-  location: "Mumbai, Maharashtra, India",
+  location: "",
   experience: "Internship",
-  type: "Hybrid",
+  type: "Remote",
   description: "DESCRIPTION",
   tags: ["Products", "People"],
   content: [
